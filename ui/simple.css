@@ -1,0 +1,52 @@
+/* 0.12: the simple Apps page (simple.js) */
+.sv-tabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:4px}
+.sv-tab{font:inherit;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;background:transparent;color:var(--ink);border:1px solid var(--line);cursor:pointer}
+.sv-tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.sv-mode{margin-left:auto;font-size:12px;color:var(--muted)}
+.sv-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--bg));padding:16px 20px;margin:12px 0}
+.sv-bar.calm{border-color:var(--line);background:var(--panel,transparent)}
+.sv-bar.dashed{border-style:dashed;background:transparent}
+.sv-grow{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.sv-bar b{font-size:17px;color:var(--accent)}
+.sv-bar.calm b{color:var(--ink)}
+.btn.big{font-size:15px;padding:13px 22px}
+.sv-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.sv-row{border:1px solid var(--line);background:var(--panel,transparent);padding:12px 18px;display:flex;flex-direction:column;gap:12px}
+.sv-row.hot,.sv-row.open{border-color:var(--accent)}
+.sv-row.web{border-style:dashed}
+.sv-main{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sv-name{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.sv-name b{font-size:16px;color:var(--accent)}
+.sv-row:not(.hot) .sv-name b{color:var(--ink)}
+.sv-st{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.sv-st.new span{color:var(--accent)}
+.sv-st.ok span{color:var(--ok)}
+.sv-st.err span{color:var(--bad)}
+.sv-more{border-top:1px dashed var(--line);padding-top:12px;display:flex;flex-direction:column;gap:10px}
+.sv-files{display:flex;flex-direction:column;gap:4px;font-size:12.5px;overflow-wrap:anywhere}
+.sv-foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:16px;color:var(--muted)}
+.sv-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:12px}
+.sv-card{border:1px solid var(--line);background:var(--panel,transparent);padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.sv-card b{font-size:16px;color:var(--accent)}
+.sv-wiz{display:flex;flex-direction:column;gap:14px;max-width:920px;margin-top:12px}
+.sv-wiz h3{margin:0;font-size:20px;color:var(--accent)}
+.sv-pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.sv-opt{font:inherit;text-align:left;padding:16px;background:transparent;color:var(--ink);border:1px solid var(--line);display:flex;flex-direction:column;gap:6px;cursor:pointer}
+.sv-opt span{color:var(--muted);font-size:12.5px}
+.sv-opt[aria-pressed="true"]{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--bg))}
+.sv-opt[aria-pressed="true"] b{color:var(--ok)}
+.sv-wlist{display:flex;flex-direction:column}
+.sv-wrow{display:grid;grid-template-columns:24px minmax(0,240px) minmax(0,1fr);gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.sv-wrow:last-child{border-bottom:0}
+.sv-ok{color:var(--ok)}
+@media (max-width:640px){.sv-wrow{grid-template-columns:24px minmax(0,1fr)}.sv-wrow .muted{grid-column:2}}
+/* 0.12.1: BIOS tabs (biostabs.js) */
+.bt-tabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+/* 0.13: section header and Android 64/32-bit */
+.sv-h{margin:0;font-size:20px;font-weight:600;color:var(--accent)}
+.sv-sub{display:flex;gap:6px}
+.sv-tab.small{font-size:11.5px;padding:6px 10px}
+/* 0.14: menu in four groups (menu.js) */
+#strip > *:not(:first-child){display:none}
+.set-col{display:flex;flex-direction:column;gap:16px}
+.moved-note{margin:0 0 4px}

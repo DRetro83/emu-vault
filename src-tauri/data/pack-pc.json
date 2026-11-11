@@ -1,0 +1,147 @@
+{
+ "apps": [
+  {
+   "id": "pc.retroarch",
+   "url": "https://buildbot.libretro.com/",
+   "author": "libretro",
+   "name": "RetroArch",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"about\": \"Frontend for libretro cores (many systems), from buildbot.libretro.com\", \"includePrereleases\": false}",
+   "overrideSource": "libretro",
+   "categories": [
+    "PC emulator"
+   ],
+   "emuvault": {
+    "offers": [
+     "linux",
+     "windows",
+     "android"
+    ],
+    "systems": [],
+    "license": "GPLv3",
+    "manual": false
+   }
+  },
+  {
+   "id": "pc.pcsx2",
+   "url": "https://github.com/PCSX2/pcsx2",
+   "author": "PCSX2",
+   "name": "PCSX2",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PlayStation 2 emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.duckstation",
+   "url": "https://github.com/stenzek/duckstation",
+   "author": "stenzek",
+   "name": "DuckStation",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PlayStation 1 emulator (Latest Rolling Release from GitHub)\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.rpcs3",
+   "url": "https://github.com/RPCS3/rpcs3-binaries-linux",
+   "author": "RPCS3",
+   "name": "RPCS3",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PlayStation 3 emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.cemu",
+   "url": "https://github.com/cemu-project/Cemu",
+   "author": "cemu-project",
+   "name": "Cemu",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": true, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Wii U emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.xemu",
+   "url": "https://github.com/xemu-project/xemu",
+   "author": "xemu-project",
+   "name": "xemu",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Original Xbox emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.melonds",
+   "url": "https://github.com/melonDS-emu/melonDS",
+   "author": "melonDS-emu",
+   "name": "melonDS (PC)",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Nintendo DS emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.mgba",
+   "url": "https://github.com/mgba-emu/mgba",
+   "author": "mgba-emu",
+   "name": "mGBA",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Game Boy Advance emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.shadps4",
+   "url": "https://github.com/shadps4-emu/shadPS4",
+   "author": "shadps4-emu",
+   "name": "shadPS4",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PlayStation 4 emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.vita3k",
+   "url": "https://github.com/Vita3K/Vita3K",
+   "author": "Vita3K",
+   "name": "Vita3K (PC)",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": true, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PlayStation Vita emulator for PC\"}",
+   "categories": [
+    "PC emulator"
+   ]
+  },
+  {
+   "id": "pc.esde",
+   "url": "https://gitlab.com/es-de/emulationstation-de",
+   "author": "es-de",
+   "name": "ES-DE (PC)",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Frontend for all your emulators, desktop version\"}",
+   "categories": [
+    "Frontend (PC)"
+   ]
+  },
+  {
+   "id": "pc.srm",
+   "url": "https://github.com/SteamGridDB/steam-rom-manager",
+   "author": "SteamGridDB",
+   "name": "Steam ROM Manager",
+   "preferredApkIndex": 0,
+   "additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Adds your games to Steam with artwork\"}",
+   "categories": [
+    "Frontend (PC)"
+   ]
+  }
+ ]
+}

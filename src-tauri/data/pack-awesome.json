@@ -1,0 +1,3669 @@
+{
+"source": "awesome-emulators by DerekTurtleRoe, CC BY-NC-SA 4.0, https://github.com/DerekTurtleRoe/awesome-emulators",
+"apps": [
+{
+"id": "aw.no-2k6",
+"url": "https://problemkaputt.github.io/",
+"author": "",
+"name": "NO$2K6",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"2600\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"atari2600"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.stella",
+"url": "https://stella-emu.github.io/",
+"author": "",
+"name": "Stella",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"2600\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari2600"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.test7800",
+"url": "https://github.com/JetSetIlly/test7800",
+"author": "",
+"name": "test7800",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"7800\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari7800"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.bigpemu",
+"url": "https://www.richwhitehouse.com/jaguar/",
+"author": "",
+"name": "BigPEmu",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Jaguar, Jaguar CD\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atarijaguar",
+"atarijaguarcd"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.daphne",
+"url": "http://www.daphne-emu.com/site3/index_hi.php",
+"author": "",
+"name": "DAPHNE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"LaserDisc arcade software\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"daphne"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.dirk-simple",
+"url": "https://github.com/icculus/DirkSimple",
+"author": "",
+"name": "Dirk Simple",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Dragon's Lair LaserDisc arcade game\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"daphne"
+],
+"license": "zlib",
+"manual": false
+}
+},
+{
+"id": "aw.singe",
+"url": "https://kangaroopunch.com/software/singe",
+"author": "",
+"name": "SINGE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"LaserDisc arcade software\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"daphne"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.duckstation-3d-screenshot",
+"url": "https://github.com/scurest/duckstation-3D-Screenshot",
+"author": "",
+"name": "DuckStation - 3D Screenshot",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS1\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"psx"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.duckstation-lightgun-edition",
+"url": "https://github.com/nixxou/duckstation",
+"author": "",
+"name": "DuckStation - LightGun Edition",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS1\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"psx"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.pcsx-redux",
+"url": "https://github.com/grumpycoders/pcsx-redux",
+"author": "",
+"name": "PCSX-Redux",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS1\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"psx"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.psxe",
+"url": "https://github.com/allkern/psxe",
+"author": "",
+"name": "PSXE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS1\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"psx"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.armsx2",
+"url": "https://armsx2.net/",
+"author": "",
+"name": "ARMSX2",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS2\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"ps2"
+],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.play",
+"url": "https://purei.org/",
+"author": "",
+"name": "Play!",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS2\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"ps2"
+],
+"license": "MIT",
+"manual": true
+}
+},
+{
+"id": "aw.purplesx2",
+"url": "https://github.com/MrPurple666/AetherSX2",
+"author": "",
+"name": "PurpleSX2",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS2\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"ps2"
+],
+"license": "Partial GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.fpps4",
+"url": "https://github.com/red-prig/fpPS4",
+"author": "",
+"name": "fpPS4",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS4\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"ps4"
+],
+"license": "LGPLv2.1 (GUI is GPLv2)",
+"manual": false
+}
+},
+{
+"id": "aw.rpcsx",
+"url": "https://github.com/RPCSX/rpcsx",
+"author": "",
+"name": "RPCSX",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS4, PS5\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux"
+],
+"systems": [
+"ps4"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.shadps4plus",
+"url": "https://github.com/AzaharPlus/shadPS4Plus",
+"author": "",
+"name": "shadPS4Plus",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PS4\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"ps4"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.3dsen",
+"url": "http://www.geodstudio.net/",
+"author": "",
+"name": "3dSen",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nes",
+"fds"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.fceux",
+"url": "https://fceux.com/web/home.html",
+"author": "",
+"name": "FCEUX",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nes",
+"fds"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.nestopia-undead-edition",
+"url": "https://github.com/0ldsk00l/nestopia",
+"author": "",
+"name": "Nestopia Undead Edition",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nes",
+"fds"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.punes",
+"url": "https://github.com/punesemu/puNES",
+"author": "",
+"name": "puNES",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nes",
+"fds"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.bsnes",
+"url": "https://github.com/devinacker/bsnes-plus",
+"author": "",
+"name": "bsnes+",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"SNES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"snes",
+"satellaview",
+"sufami"
+],
+"license": "GPLv3+",
+"manual": false
+}
+},
+{
+"id": "aw.bsnes-hd",
+"url": "https://github.com/DerKoun/bsnes-hd",
+"author": "",
+"name": "bsnes-hd",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"SNES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"snes",
+"satellaview",
+"sufami"
+],
+"license": "GPLv3+",
+"manual": false
+}
+},
+{
+"id": "aw.snes9x",
+"url": "https://github.com/snes9xgit/snes9x",
+"author": "",
+"name": "SNES9x",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"SNES\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"snes",
+"satellaview",
+"sufami"
+],
+"license": "Custom license",
+"manual": false
+}
+},
+{
+"id": "aw.daedalusx64",
+"url": "https://github.com/DaedalusX64/daedalus",
+"author": "",
+"name": "DaedalusX64",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.daedalusx64-vitagl",
+"url": "https://github.com/Rinnegatamante/DaedalusX64-vitaGL",
+"author": "",
+"name": "DaedalusX64-vitaGL",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.dgb-n64",
+"url": "https://github.com/Dillonb/n64",
+"author": "",
+"name": "dgb-n64",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "Source available",
+"manual": false
+}
+},
+{
+"id": "aw.gopher64",
+"url": "https://github.com/gopher64/gopher64",
+"author": "",
+"name": "gopher64",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.kaizen-previously-gadolinium",
+"url": "https://github.com/SimoneN64/Kaizen",
+"author": "",
+"name": "Kaizen (previously Gadolinium)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "3-clause BSD",
+"manual": false
+}
+},
+{
+"id": "aw.mupen64plus",
+"url": "https://github.com/mupen64plus",
+"author": "",
+"name": "Mupen64Plus",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.mupen64plus-ae",
+"url": "https://github.com/mupen64plus-ae/mupen64plus-ae",
+"author": "",
+"name": "Mupen64Plus-AE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.mupen64plusae-mpn",
+"url": "https://github.com/MarioPartyNetplay/Mupen64PlusAE-MPN",
+"author": "",
+"name": "Mupen64PlusAE-MPN",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.mupen-mpn",
+"url": "https://github.com/MarioPartyNetplay/Mupen-MPN",
+"author": "",
+"name": "Mupen-MPN",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.mupen64plus-qt",
+"url": "https://github.com/dh4/mupen64plus-qt",
+"author": "",
+"name": "Mupen64Plus-qt",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.nemu",
+"url": "https://www.zophar.net/n64/Nemu64.html",
+"author": "",
+"name": "Nemu",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.parallel-launcher-gui-for-both-retroarch-n64-cores",
+"url": "https://parallel-launcher.ca/",
+"author": "",
+"name": "Parallel Launcher (GUI for both RetroArch N64 cores)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv3+",
+"manual": true
+}
+},
+{
+"id": "aw.project64",
+"url": "https://www.pj64-emu.com/",
+"author": "",
+"name": "Project64",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.project64-mpn",
+"url": "https://github.com/MarioPartyNetplay/Project64-MPN",
+"author": "",
+"name": "Project64-MPN",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.project64-legacy",
+"url": "https://www.project64-legacy.com/",
+"author": "",
+"name": "Project64 Legacy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.rosalie-s-mupen-gui",
+"url": "https://github.com/Rosalie241/RMG",
+"author": "",
+"name": "Rosalie's Mupen GUI",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"N64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"n64",
+"n64dd"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.dolphin",
+"url": "https://dolphin-emu.org/",
+"author": "",
+"name": "Dolphin",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NGC, Wii\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gc",
+"wii"
+],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.ishiiruka-dolphin",
+"url": "https://github.com/Tinob/Ishiiruka",
+"author": "",
+"name": "Ishiiruka-Dolphin",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NGC, Wii\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gc"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.cemu-android",
+"url": "https://github.com/XForYouX/Cemu-Android",
+"author": "",
+"name": "Cemu-Android",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Wii U\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"wiiu"
+],
+"license": "MPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.blastem",
+"url": "https://www.retrodev.com/blastem/",
+"author": "",
+"name": "BlastEm",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Genesis/Megadrive\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"megadrive",
+"genesis",
+"sega32x",
+"segacd"
+],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.cega",
+"url": "https://gitlab.com/jgemu/cega",
+"author": "",
+"name": "Cega",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Genesis/Megadrive, Master System, Game Gear, SG-1000\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"megadrive",
+"genesis",
+"sega32x",
+"segacd"
+],
+"license": "MPL 2.0",
+"manual": false
+}
+},
+{
+"id": "aw.exodus",
+"url": "https://www.exodusemulator.com/",
+"author": "",
+"name": "Exodus",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Genesis/Megadrive\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"megadrive",
+"genesis",
+"sega32x",
+"segacd"
+],
+"license": "3-clause BSD",
+"manual": true
+}
+},
+{
+"id": "aw.genesis-plus-gx",
+"url": "https://github.com/ekeeke/Genesis-Plus-GX",
+"author": "",
+"name": "Genesis-Plus-GX",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Genesis/Megadrive, Sega CD, 32X, Master System, Game Gear, SG-1000\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"megadrive",
+"genesis",
+"sega32x",
+"segacd"
+],
+"license": "Custom, source available",
+"manual": false
+}
+},
+{
+"id": "aw.jgenesis",
+"url": "https://github.com/jsgroth/jgenesis",
+"author": "",
+"name": "jgenesis",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Genesis, Sega CD, SNES, Master System, Game Gear\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"megadrive",
+"genesis",
+"sega32x",
+"segacd"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.kronos",
+"url": "https://github.com/FCare/Kronos",
+"author": "",
+"name": "Kronos",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Saturn\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"saturn"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.yaba-sanshiro-2-formerly-uoyabause",
+"url": "https://www.uoyabause.org/",
+"author": "",
+"name": "Yaba Sanshiro 2 (formerly uoYabause)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Saturn\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"saturn"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.deecy",
+"url": "https://github.com/Senryoku/Deecy",
+"author": "",
+"name": "Deecy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Dreamcast\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dreamcast"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.flycast-dojo",
+"url": "https://github.com/blueminder/flycast-dojo",
+"author": "",
+"name": "Flycast Dojo",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Dreamcast\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dreamcast"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.flycast",
+"url": "https://github.com/flyinghead/flycast",
+"author": "",
+"name": "Flycast",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Dreamcast\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"dreamcast"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.redream",
+"url": "https://redream.io/",
+"author": "",
+"name": "ReDream",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Dreamcast\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"dreamcast"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.dreampotato",
+"url": "https://github.com/RikkiGibson/DreamPotato",
+"author": "",
+"name": "DreamPotato",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Sega Dreamcast VMU\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"dreamcast"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.cxbx-reloaded",
+"url": "https://cxbx-reloaded.co.uk/",
+"author": "",
+"name": "Cxbx-Reloaded",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Xbox\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"xbox"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.xenia",
+"url": "https://xenia.jp",
+"author": "",
+"name": "Xenia",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"360\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"xbox360"
+],
+"license": "MIT",
+"manual": true
+}
+},
+{
+"id": "aw.xenia-canary",
+"url": "https://github.com/xenia-canary/xenia-canary-releases",
+"author": "",
+"name": "Xenia Canary",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"360\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"xbox360"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.ootake",
+"url": "https://www.ouma.jp/ootake/",
+"author": "",
+"name": "Ootake",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PCE/TG-16\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"pcengine",
+"pcenginecd",
+"supergrafx",
+"tg16"
+],
+"license": "GPLv2+",
+"manual": true
+}
+},
+{
+"id": "aw.geolith",
+"url": "https://gitlab.com/jgemu/geolith",
+"author": "",
+"name": "geolith",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Neo Geo AES/MVS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"neogeo",
+"neogeocd"
+],
+"license": "3-clause BSD",
+"manual": false
+}
+},
+{
+"id": "aw.cedimu",
+"url": "https://github.com/Stovent/CeDImu",
+"author": "",
+"name": "CeDImu",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"CD-i\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"cdimono1"
+],
+"license": "Source available",
+"manual": false
+}
+},
+{
+"id": "aw.vecx-jg",
+"url": "https://gitlab.com/jgemu/vecx",
+"author": "",
+"name": "Vecx JG",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Vectrex\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"vectrex"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.freeintv",
+"url": "https://github.com/libretro/FreeIntv",
+"author": "",
+"name": "FreeIntv",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Intellivision\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"intellivision"
+],
+"license": "GPLv2+",
+"manual": false
+}
+},
+{
+"id": "aw.coolcv",
+"url": "http://atariage.com/forums/topic/240800-coolcv-emulator-for-mac-os-x-linux-windows-and-raspberry/",
+"author": "",
+"name": "CoolCV",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"ColecoVision\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"colecovision"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.jollycv",
+"url": "https://gitlab.com/jgemu/jollycv",
+"author": "",
+"name": "jollycv",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"ColecoVision\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"colecovision"
+],
+"license": "3-clause BSD",
+"manual": false
+}
+},
+{
+"id": "aw.bgb",
+"url": "http://bgb.bircd.org/",
+"author": "",
+"name": "BGB",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, Super Game Boy\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.gameroy",
+"url": "https://github.com/Rodrigodd/gameroy",
+"author": "",
+"name": "GameRoy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "Dual-licensed under MIT and Apache 2.0 license",
+"manual": false
+}
+},
+{
+"id": "aw.gbcc",
+"url": "https://gbcc.dev/",
+"author": "",
+"name": "GBCC",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "MIT",
+"manual": true
+}
+},
+{
+"id": "aw.gearboy",
+"url": "https://github.com/drhelius/Gearboy",
+"author": "",
+"name": "Gearboy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.guac",
+"url": "https://github.com/aabalke/guac",
+"author": "",
+"name": "guac",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "BSD 3-clause",
+"manual": false
+}
+},
+{
+"id": "aw.hhugboy",
+"url": "https://github.com/tzlion/hhugboy",
+"author": "",
+"name": "hhugboy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "GPLv2+",
+"manual": false
+}
+},
+{
+"id": "aw.sameboy",
+"url": "https://github.com/LIJI32/SameBoy",
+"author": "",
+"name": "SameBoy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, Super Game Boy\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.vgb-aka-virtual-game-boy",
+"url": "https://fms.komkon.org/VGB/",
+"author": "",
+"name": "VGB (AKA Virtual Game Boy)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, Super Game Boy\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gb",
+"gbc"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.hades",
+"url": "https://hades-emu.org/",
+"author": "",
+"name": "Hades",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GBA\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gba"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.nanoboyadvance",
+"url": "https://github.com/nba-emu/NanoBoyAdvance",
+"author": "",
+"name": "NanoBoyAdvance",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, GBA\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gba"
+],
+"license": "GPLv3+",
+"manual": false
+}
+},
+{
+"id": "aw.skyemu",
+"url": "https://github.com/skylersaleh/SkyEmu",
+"author": "",
+"name": "SkyEmu",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, GBA\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gba"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.vba-m",
+"url": "https://github.com/visualboyadvance-m/visualboyadvance-m",
+"author": "",
+"name": "VBA-M",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"GB, GBC, GBA\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"gba"
+],
+"license": "GPLv2+",
+"manual": false
+}
+},
+{
+"id": "aw.desmume",
+"url": "https://desmume.org/",
+"author": "",
+"name": "DeSmuME",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nds",
+"dsi"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.desmume-x432r",
+"url": "https://www.emulation64.com/files/info/741/desmume-x432r.html/",
+"author": "",
+"name": "DeSmuME-X432R",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"nds",
+"dsi"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.drastic",
+"url": "https://play.google.com/store/apps/details?id=com.dsemu.drastic",
+"author": "",
+"name": "DraStic",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"nds",
+"dsi"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.melonds-launcher",
+"url": "https://github.com/LeviChen1126/melonDS-launcher",
+"author": "",
+"name": "melonDS-launcher",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"nds",
+"dsi"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.melonds-android",
+"url": "https://github.com/rafaelvcaetano/melonDS-android",
+"author": "",
+"name": "melonDS-android",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"nds",
+"dsi"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.azahar",
+"url": "https://github.com/azahar-emu/azahar",
+"author": "",
+"name": "Azahar",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"3DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"n3ds",
+"3ds"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.lime3ds",
+"url": "https://lime3ds.github.io/",
+"author": "",
+"name": "Lime3DS",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"3DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"n3ds",
+"3ds"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.mandarine",
+"url": "https://github.com/mandarine3ds/mandarine",
+"author": "",
+"name": "Mandarine",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"3DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"n3ds",
+"3ds"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.pablomk7-s-citra",
+"url": "https://github.com/PabloMK7/citra",
+"author": "",
+"name": "PabloMK7's Citra",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"3DS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"n3ds",
+"3ds"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.gearsystem",
+"url": "https://github.com/drhelius/Gearsystem",
+"author": "",
+"name": "Gearsystem",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Mark III/Master System, Game Gear, SG-1000, Othello Multivision\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gamegear"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.mastergear",
+"url": "https://fms.komkon.org/MG/",
+"author": "",
+"name": "MasterGear",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Mark III/Master System, Game Gear, SG-1000, SC-3000, SF-7000\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"gamegear"
+],
+"license": "Proprietary, developer says you can contact him for source",
+"manual": true
+}
+},
+{
+"id": "aw.ppsspp",
+"url": "https://ppsspp.org/",
+"author": "",
+"name": "PPSSPP",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PSP\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"psp"
+],
+"license": "GPLv2+",
+"manual": true
+}
+},
+{
+"id": "aw.vita3k-android",
+"url": "https://github.com/ikhoeyZX/Vita3K-Android",
+"author": "",
+"name": "Vita3K-Android",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Vita\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"psvita"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.xcpc",
+"url": "https://www.xcpc-emulator.net/",
+"author": "",
+"name": "Xcpc",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"CPC\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux"
+],
+"systems": [
+"amstradcpc"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.dosbox-pure",
+"url": "https://github.com/schellingb/dosbox-pure",
+"author": "",
+"name": "DOSBox-Pure",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DOS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.dosbox-staging",
+"url": "https://dosbox-staging.github.io/",
+"author": "",
+"name": "DOSBox-Staging",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DOS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.dosbox-x",
+"url": "https://github.com/joncampbell123/dosbox-x",
+"author": "",
+"name": "DOSBox-X",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"DOS\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.86box",
+"url": "https://github.com/86Box/86Box",
+"author": "",
+"name": "86Box",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.bochs",
+"url": "https://github.com/bochs-emu/Bochs",
+"author": "",
+"name": "Bochs",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "LGPLv2.1",
+"manual": false
+}
+},
+{
+"id": "aw.box86",
+"url": "https://github.com/ptitSeb/box86",
+"author": "",
+"name": "Box86",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.box64",
+"url": "https://github.com/ptitSeb/box64",
+"author": "",
+"name": "Box64",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.box64droid",
+"url": "https://github.com/Ilya114/Box64Droid",
+"author": "",
+"name": "Box64Droid",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.fex-emu",
+"url": "https://github.com/FEX-Emu/FEX",
+"author": "",
+"name": "FEX-Emu",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.martypc",
+"url": "https://github.com/dbalsom/martypc",
+"author": "",
+"name": "MartyPC",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.pcbox",
+"url": "https://github.com/PCBox/PCBox",
+"author": "",
+"name": "PCBox",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.qemu",
+"url": "https://www.qemu.org/",
+"author": "",
+"name": "QEMU",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86, ARM, MIPS, RISC-V, PowerPC, more\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "LGPLv2.1",
+"manual": true
+}
+},
+{
+"id": "aw.unipcemu-formerly-x86emu",
+"url": "https://superfury.itch.io/unipcemu",
+"author": "",
+"name": "UniPCEmu (formerly x86EMU)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows",
+"android"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.varcem",
+"url": "https://www.varcem.com/",
+"author": "",
+"name": "VARCem",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "3-clause BSD",
+"manual": true
+}
+},
+{
+"id": "aw.virtualxt",
+"url": "https://github.com/andreas-jonsson/virtualxt",
+"author": "",
+"name": "VirtualXT",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"x86\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"dos",
+"pc",
+"windows"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.applewin",
+"url": "https://github.com/AppleWin/AppleWin",
+"author": "",
+"name": "AppleWin",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Apple computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"macintosh",
+"apple2"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.basilisk-ii-community-fork-with-updates",
+"url": "https://github.com/kanjitalk755/macemu",
+"author": "",
+"name": "Basilisk II (community fork with updates)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Apple computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"macintosh",
+"apple2"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.lisaem-fork-with-some-small-additions",
+"url": "https://github.com/arcanebyte/lisaem",
+"author": "",
+"name": "LisaEm (fork with some small additions)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Apple computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"macintosh",
+"apple2"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.mini-vmac",
+"url": "https://www.gryphel.com/c/minivmac/index.html",
+"author": "",
+"name": "Mini vMac",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Apple computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"macintosh",
+"apple2"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.sheepshaver-community-fork-with-updates",
+"url": "https://github.com/kanjitalk755/macemu",
+"author": "",
+"name": "SheepShaver (community fork with updates)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Apple computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"macintosh",
+"apple2"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.c64forever",
+"url": "https://www.c64forever.com/",
+"author": "",
+"name": "C64Forever",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Commodore 64\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"c64",
+"vic20",
+"plus4"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.vice",
+"url": "https://vice-emu.sourceforge.io/",
+"author": "",
+"name": "VICE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"PET, VIC20, PLUS4, CBM, C64, 64DTV, 128\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"c64",
+"vic20",
+"plus4"
+],
+"license": "GPLv2+",
+"manual": true
+}
+},
+{
+"id": "aw.amigaforever",
+"url": "https://www.amigaforever.com/",
+"author": "",
+"name": "AmigaForever",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Amiga, Amiga CD32\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"amiga",
+"amigacd32",
+"cdtv"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.fs-uae",
+"url": "https://fs-uae.net/",
+"author": "",
+"name": "FS-UAE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Amiga, Amiga CD32\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"amiga",
+"amigacd32",
+"cdtv"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.winfellow",
+"url": "https://github.com/petschau/WinFellow",
+"author": "",
+"name": "WinFellow",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Amiga\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"amiga",
+"amigacd32",
+"cdtv"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.winuae",
+"url": "https://www.winuae.net/",
+"author": "",
+"name": "WinUAE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Amiga, Amiga CD32\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"amiga",
+"amigacd32",
+"cdtv"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.atari800",
+"url": "https://github.com/atari800/atari800",
+"author": "",
+"name": "Atari800",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers, [List of supported systems](https://atari800.github.io/features.html)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.fujisan",
+"url": "https://github.com/pedgarcia/fujisan",
+"author": "",
+"name": "Fujisan",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.hatari",
+"url": "https://hatari.tuxfamily.org/",
+"author": "",
+"name": "Hatari",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.pce",
+"url": "http://www.hampa.ch/pub/pce/pre/",
+"author": "",
+"name": "pce",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.steem-sse",
+"url": "https://sourceforge.net/projects/steemsse/",
+"author": "",
+"name": "Steem SSE",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.xpeccy",
+"url": "https://github.com/samstyle/Xpeccy",
+"author": "",
+"name": "Xpeccy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Atari computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"atari800",
+"atarist"
+],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.eightyone",
+"url": "https://sourceforge.net/projects/eightyone-sinclair-emulator/",
+"author": "",
+"name": "EightyOne",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Sinclair ZX81\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"zx81"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.speccy",
+"url": "https://fms.komkon.org/Speccy/",
+"author": "",
+"name": "Speccy",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Sinclair ZX Spectrum\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"zxspectrum"
+],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.zxpoly",
+"url": "https://github.com/raydac/zxpoly",
+"author": "",
+"name": "ZXPoly",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Sinclair ZX Spectrum\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"zxspectrum"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.openmsx",
+"url": "https://github.com/openMSX/openMSX",
+"author": "",
+"name": "openMSX",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"MSX computers\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"msx",
+"msx2"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.lightspark",
+"url": "https://github.com/lightspark/lightspark",
+"author": "",
+"name": "Lightspark",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Adobe Flash\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"flash"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.ruffle",
+"url": "https://github.com/ruffle-rs/ruffle",
+"author": "",
+"name": "Ruffle",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Adobe Flash\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"flash"
+],
+"license": "Dual-licensed under the Apache 2.0 license and the MIT",
+"manual": false
+}
+},
+{
+"id": "aw.flashpoint-archive",
+"url": "https://flashpointarchive.org/",
+"author": "",
+"name": "Flashpoint Archive",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Adobe Flash\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"flash"
+],
+"license": "Multiple licenses",
+"manual": true
+}
+},
+{
+"id": "aw.easyrpg",
+"url": "https://easyrpg.org/",
+"author": "",
+"name": "EasyRPG",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"RPG Maker\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.joiplay",
+"url": "https://joiplay.net/",
+"author": "",
+"name": "JoiPlay",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"RPG Maker, Ren'Py, HTML5\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "No central repo, seems to just be a combination of other projects?",
+"manual": true
+}
+},
+{
+"id": "aw.mkxp",
+"url": "https://github.com/Ancurio/mkxp",
+"author": "",
+"name": "MKXP",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Ruby Game Scripting System\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.opengmk",
+"url": "https://github.com/OpenGMK/OpenGMK",
+"author": "",
+"name": "OpenGMK",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Game Maker\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.onscripter-en-english-support",
+"url": "https://github.com/Galladite27/ONScripter-en",
+"author": "",
+"name": "ONScripter-EN (English support)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NScripter\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.onscripteryuri-enhancement-version-based-on-jh",
+"url": "https://github.com/YuriSizuku/OnscripterYuri",
+"author": "",
+"name": "ONScripterYuri (Enhancement version, based on Jh)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NScripter\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"scummvm",
+"easyrpg"
+],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.goldberg-steam-emulator",
+"url": "https://gitlab.com/Mr_Goldberg/goldberg_emulator",
+"author": "",
+"name": "Goldberg Steam Emulator",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Steam\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"windows"
+],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.final-burn-alpha-neo",
+"url": "https://github.com/finalburnneo/FBNeo",
+"author": "",
+"name": "Final Burn Alpha Neo",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Multiple arcade systems\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"arcade",
+"mame",
+"fbneo",
+"naomi",
+"naomi2",
+"model3"
+],
+"license": "Custom license",
+"manual": false
+}
+},
+{
+"id": "aw.mame-multiple-arcade-machine-emulator",
+"url": "https://mamedev.org/",
+"author": "",
+"name": "MAME (Multiple Arcade Machine Emulator)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Many systems\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"arcade",
+"mame",
+"fbneo",
+"naomi",
+"naomi2",
+"model3"
+],
+"license": "GPLv2 and 3-clause BSD",
+"manual": true
+}
+},
+{
+"id": "aw.supermodel",
+"url": "https://supermodel3.com/Download.html",
+"author": "",
+"name": "Supermodel",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Sega Model 3\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"arcade",
+"mame",
+"fbneo",
+"naomi",
+"naomi2",
+"model3"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.pfemame",
+"url": "https://sourceforge.net/projects/pfemame/files/",
+"author": "",
+"name": "pfeMAME",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Multiple arcade systems\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [
+"arcade",
+"mame",
+"fbneo",
+"naomi",
+"naomi2",
+"model3"
+],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.pinmame",
+"url": "https://github.com/vpinball/pinmame",
+"author": "",
+"name": "PinMAME",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Check [README](https://github.com/vpinball/pinmame#what-is-it)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows",
+"android"
+],
+"systems": [
+"vpinball"
+],
+"license": "MAME license and 3-clause BSD",
+"manual": false
+}
+},
+{
+"id": "aw.visual-pinball",
+"url": "https://github.com/vpinball/vpinball",
+"author": "",
+"name": "Visual Pinball",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Everything PinMAME supports\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [
+"vpinball"
+],
+"license": "MAME license and 3-clause BSD",
+"manual": false
+}
+},
+{
+"id": "aw.ares",
+"url": "https://ares-emu.net/",
+"author": "",
+"name": "ares",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[Emulated systems](https://ares-emu.net/compatibility)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "ISC",
+"manual": true
+}
+},
+{
+"id": "aw.bizhawk",
+"url": "https://tasvideos.org/BizHawk",
+"author": "",
+"name": "BizHawk",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of cores](https://github.com/TASEmulators/BizHawk#cores)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "MIT",
+"manual": true
+}
+},
+{
+"id": "aw.mednafen",
+"url": "https://mednafen.github.io/",
+"author": "",
+"name": "Mednafen",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](https://mednafen.github.io/)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.altirra",
+"url": "https://www.virtualdub.org/altirra.html",
+"author": "",
+"name": "Altirra",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](https://www.virtualdub.org/altirra.html)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [],
+"license": "GPLv2",
+"manual": true
+}
+},
+{
+"id": "aw.atari",
+"url": "http://xl-project.com/",
+"author": "",
+"name": "Atari++",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](http://xl-project.com/)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [],
+"license": "THOR Public License",
+"manual": true
+}
+},
+{
+"id": "aw.mesen-continuation-of-mesen-project",
+"url": "https://github.com/SourMesen/Mesen2",
+"author": "",
+"name": "Mesen (continuation of Mesen project)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"NES, SNES, Game Boy, and PC-Engine/TurboGrafx-16, Sega Master System/Game Gear, WonderSwan\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.gbe",
+"url": "https://github.com/shonumi/gbe-plus",
+"author": "",
+"name": "GBE+",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Game Boy, Game Boy Color, Game Boy Advance, Nintendo DS, Pokemon Mini\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv2",
+"manual": false
+}
+},
+{
+"id": "aw.clock-signal-clk",
+"url": "https://github.com/TomHarte/CLK",
+"author": "",
+"name": "Clock Signal (CLK)",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](https://github.com/TomHarte/CLK)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux"
+],
+"systems": [],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.meka",
+"url": "https://github.com/ocornut/meka",
+"author": "",
+"name": "Meka",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](https://github.com/ocornut/meka)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "Custom/\"BSD-like\"",
+"manual": false
+}
+},
+{
+"id": "aw.zesarux",
+"url": "https://github.com/chernandezba/zesarux",
+"author": "",
+"name": "ZEsarUX",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems]((<https://github.com/chernandezba/zesarux>)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.pockemul",
+"url": "https://pockemul.com",
+"author": "",
+"name": "PockEmul",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"[List of supported systems](https://pockemul.com/index.php/pockemul-portfolio)\"}",
+"categories": [
+"PC Emulation"
+],
+"emuvault": {
+"offers": [
+"windows",
+"android"
+],
+"systems": [],
+"license": "Proprietary",
+"manual": true
+}
+},
+{
+"id": "aw.attract-mode-plus",
+"url": "https://github.com/oomek/attractplus",
+"author": "",
+"name": "Attract-Mode Plus",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.emuze",
+"url": "https://github.com/bmsuseluda/emuze",
+"author": "",
+"name": "Emuze",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.firelight",
+"url": "https://github.com/firelight-emulator/firelight",
+"author": "",
+"name": "Firelight",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.retrom",
+"url": "https://github.com/JMBeresford/retrom",
+"author": "",
+"name": "Retrom",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.retroquest",
+"url": "https://github.com/RetroDECK/RetroQUEST",
+"author": "",
+"name": "RetroQUEST",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"linux",
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.simplelauncher",
+"url": "https://github.com/drpetersonfernandes/SimpleLauncher",
+"author": "",
+"name": "SimpleLauncher",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \":heavy_check_mark:\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"windows"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": false
+}
+},
+{
+"id": "aw.lemuroid",
+"url": "https://play.google.com/store/apps/details?id=com.swordfish.lemuroid",
+"author": "",
+"name": "Lemuroid",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"RetroArch\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [],
+"license": "GPLv3",
+"manual": true
+}
+},
+{
+"id": "aw.daijishou",
+"url": "https://github.com/TapiocaFox/Daijishou",
+"author": "",
+"name": "Daijishou",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"RetroArch, other emulator apps\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [],
+"license": "MIT",
+"manual": false
+}
+},
+{
+"id": "aw.pluvia",
+"url": "https://github.com/oxters168/Pluvia",
+"author": "",
+"name": "Pluvia",
+"preferredApkIndex": 0,
+"additionalSettings": "{\"includePrereleases\": false, \"fallbackToOlderReleases\": true, \"sortMethodChoice\": \"date\", \"about\": \"Steam client\"}",
+"categories": [
+"Frontend (PC)"
+],
+"emuvault": {
+"offers": [
+"android"
+],
+"systems": [
+"windows"
+],
+"license": "GPLv3",
+"manual": false
+}
+}
+]
+}

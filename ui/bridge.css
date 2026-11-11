@@ -1,0 +1,59 @@
+/* real covers from media/<system>/covers/ */
+.cov.img{padding:0;background:var(--inset,#111);border:1px solid var(--line)}
+.cov.img img{width:100%;height:100%;object-fit:contain;display:block}
+/* every console its own box shape */
+.cov.big{aspect-ratio:var(--ar,.75)}
+.cov:not(.big){width:auto;height:46px;aspect-ratio:var(--ar,.74);max-width:64px}
+.lbx-cov{width:auto;display:flex;justify-content:center}
+.lbx-cov .cov.big{width:auto;height:min(calc(100dvh - 360px),440px,calc(64vw / var(--ar,.75)),calc(330px / var(--ar,.75)));min-height:180px;max-width:min(64vw,440px)}
+.ctile .cov.big{width:100%;height:auto}
+/* inbox: totals and clean-up on top, not-games folded at the bottom */
+.ib-clean{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.ib-clean details.filt > summary{cursor:pointer}
+.ib-clean .gact{flex-wrap:wrap}
+details.ib-notgames{margin-top:14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+details.ib-notgames > summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}
+details.ib-notgames > summary::-webkit-details-marker{display:none}
+details.ib-notgames .t{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:600;white-space:nowrap}
+details.ib-notgames .fs{color:var(--muted);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+details.ib-notgames > .ilist{padding:0 12px 12px}
+@media (max-width:600px){ details.ib-notgames > summary{grid-template-columns:minmax(0,1fr) auto} details.ib-notgames .fs{display:none} }
+.ib-other .mono,.ib-other .muted,.ib-other select{overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+.ib-other .q{display:flex;flex-direction:column;gap:4px;min-width:0}
+/* controller bar in the theme colours */
+.padbar{background:var(--panel);color:var(--ink);border:1px solid var(--accent);border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.45);font-family:var(--f-mono,inherit)}
+.padbar b{background:var(--accent);color:var(--accent-ink);border-radius:3px}
+.ib-have{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;border-top:1px dashed var(--line);padding-top:8px;font-size:13px}
+.ib-have span{flex:1 1 260px;min-width:0}
+#art-tool .mono,#space-sec .mono{overflow-wrap:anywhere;word-break:break-word}
+.esde-card{display:flex;flex-direction:column;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.esde-card .checks{display:flex;flex-direction:column;gap:6px}
+.esde-card .mono{overflow-wrap:anywhere}
+/* Collection: all covers at once, drawn as you scroll */
+.cgrid .ctile{content-visibility:auto;contain-intrinsic-size:auto 190px}
+/* cover viewer: the text below always takes the same room, so the arrows stay in place */
+.lbx-info{height:clamp(150px,30dvh,280px);max-height:none}
+.rdy-list{display:flex;flex-direction:column}
+.rdy-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:8px 0;border-bottom:1px dashed var(--line)}
+.rdy-row:last-child{border-bottom:0}
+.rdy-name{flex:1 1 180px;min-width:0;display:flex;flex-direction:column}
+.rdy-name .muted{font-size:12px}
+.rdy-cells{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px}
+.rdy-cells select{max-width:230px;min-width:0;font-size:13px}
+.rdy{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:3px;font-size:11px;font-weight:700}
+.rdy.ok{background:var(--ok-bg);color:var(--ok)}.rdy.no{background:var(--warn-bg);color:var(--warn)}
+.rdy-row.all .rdy-name b::after{content:"  ✓ ready";color:var(--ok);font-weight:400;font-size:12px}
+/* 0.8.1: Ready to play in straight columns: BIOS · emulator · covers · ES-DE line up on every row */
+.rdy-row{display:grid;grid-template-columns:minmax(0,1fr);gap:6px 16px;align-items:center}
+.rdy-cells{display:grid;grid-template-columns:minmax(110px,1fr) minmax(160px,1.5fr) minmax(140px,1fr) 64px;gap:8px 14px;align-items:center;width:100%}
+.rdy-cells>span{display:flex;align-items:center;gap:6px;min-width:0;white-space:nowrap}
+.rdy-cells>span .linkbtn{overflow:hidden;text-overflow:ellipsis}
+.rdy-cells select{width:100%;max-width:none;min-width:0}
+.rdy-cells .rdy-play [data-ragain]{text-decoration:none;font-size:15px;line-height:1;padding:0 2px}
+@media (min-width:1400px){.rdy-row{grid-template-columns:minmax(200px,1fr) minmax(0,2.4fr)}}
+@media (max-width:640px){.rdy-cells{grid-template-columns:1fr 1fr}.rdy-cells>.rdy-play{grid-column:1/-1}}
+/* 0.10.1: less room between the menu items, also with a controller */
+@media (min-width:900px){
+  html.pad .side .tab{min-height:38px;padding-block:6px}
+  .side .tabs{gap:1px}
+}

@@ -1,0 +1,17 @@
+/* 0.15: startup screen (splash.js) */
+#splash{position:fixed;inset:0;z-index:9999;background:#262624;color:#e4dfd0;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;padding:48px 24px;box-sizing:border-box;transition:opacity .3s}
+#splash.out{opacity:0;pointer-events:none}
+#splash .sp-logo{margin:0;color:#f2a73a;font-size:min(15px,1.85vw);line-height:1.15;font-weight:600;font-family:inherit}
+#splash .sp-ver{color:#918d82;font-size:12px;letter-spacing:2px;text-align:center;overflow-wrap:anywhere}
+#splash .sp-rows{width:100%;max-width:620px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+#splash .sp-row{display:flex;gap:12px}
+#splash .sp-st{width:56px;flex:none}
+#splash .sp-st.ok{color:#d0cb3e}#splash .sp-st.warn{color:#f2a73a}#splash .sp-st.wait{color:#918d82}
+#splash .sp-val{margin-left:auto;color:#918d82;text-align:right}
+#splash .sp-row:has(.warn) .sp-val{color:#f2a73a}
+#splash .sp-barbox{width:100%;max-width:620px;display:flex;flex-direction:column;gap:8px}
+#splash .sp-bar{height:10px;border:1px solid #47463f;background:#2e2e2b}
+#splash #sp-fill{height:100%;width:0;background:#f2a73a;transition:width .12s linear}
+#splash .sp-foot{display:flex;justify-content:space-between;gap:12px;color:#918d82;font-size:12px}
+@media (prefers-reduced-motion:reduce){#splash,#splash #sp-fill{transition:none}}

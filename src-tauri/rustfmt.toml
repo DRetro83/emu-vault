@@ -1,0 +1,3 @@
+# Emu Vault keeps long lines; run `cargo fmt` before a release
+max_width = 160
+use_small_heuristics = "Max"

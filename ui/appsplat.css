@@ -1,0 +1,23 @@
+/* 0.10: Apps per platform and the catalog (appsplat.js) */
+.ap-top{gap:12px}
+.ap-plat button{display:inline-flex;gap:6px;align-items:baseline}
+.ap-plat .ap-n{font-size:12px;opacity:.75}
+.ap-box{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding:10px 14px 0}
+.ap-keep{gap:8px;flex-wrap:wrap}
+.ap-tw{overflow-x:auto;max-width:100%}
+.ap-t{border-collapse:collapse;width:100%;min-width:560px;font-size:12.5px}
+.ap-t th{text-align:left;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+.ap-t td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.ap-t tr:last-child td{border-bottom:0}
+.ap-ok{color:var(--ok)}
+.ap-no{color:var(--bad)}
+/* 0.10.2: the sidebar's scrollbar in the gap next to it, clear of the counts (this file loads after gog.css) */
+@media (min-width:900px){
+  .side{padding-right:24px;margin-right:-24px}
+}
+/* 0.11: ticks for the files of a release */
+.ap-ticks{display:flex;flex-direction:column;gap:6px}
+.ap-tick{display:grid;grid-template-columns:auto 110px minmax(0,1fr) auto auto;gap:10px;align-items:center;font-size:12.5px;cursor:pointer}
+.ap-tick .p{color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ap-tick .fn{overflow-wrap:anywhere}
+@media (max-width:640px){.ap-tick{grid-template-columns:auto minmax(0,1fr)}.ap-tick .p,.ap-tick .muted{display:none}}

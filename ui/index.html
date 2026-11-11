@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Emu Vault</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bridge.css">
+<link rel="stylesheet" href="gog.css">
+<link rel="stylesheet" href="appsplat.css">
+<link rel="stylesheet" href="simple.css">
+<link rel="stylesheet" href="splash.css">
+</head>
+<body>
+<script src="splash.js"></script>
+<div class="shell">
+<aside class="side">
+  <div class="brand"><div class="rbar"><span>EMU VAULT</span></div><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M7.5 12h3M9 10.5v3"/><circle cx="15.5" cy="11" r=".9" fill="currentColor" stroke="none"/><circle cx="17.5" cy="13" r=".9" fill="currentColor" stroke="none"/></svg></span>
+    <div><h1>Emu Vault</h1><p class="desc">Your emulators, BIOS, games and saves, backed up on your own drive.</p></div></div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" data-tab="home" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/></svg><span class="lb">Home</span><span class="n" id="n-home"></span></button>
+    <button class="tab" role="tab" data-tab="inbox" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l2.5-8h11L20 13"/><path d="M4 13v6h16v-6"/><path d="M4 13h4.5l1 2h5l1-2H20"/></svg><span class="lb">Inbox</span><span class="n" id="n-inbox"></span></button>
+    <button class="tab" role="tab" data-tab="coll" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><span class="lb">Collection</span><span class="n" id="n-coll"></span></button>
+    <button class="tab" role="tab" data-tab="roms" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v14l-2 2v2H8v-2l-2-2z"/><path d="M9 7h6v5H9z"/></svg><span class="lb">ROMs</span><span class="n" id="n-roms"></span></button>
+    <button class="tab" role="tab" data-tab="emu" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span class="lb">Apps</span><span class="n" id="n-emu"></span></button>
+    <button class="tab" role="tab" data-tab="bios" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span class="lb">BIOS</span><span class="n" id="n-bios"></span></button>
+    <button class="tab" role="tab" data-tab="bk" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/><path d="M12 8v4l3 2"/></svg><span class="lb">Backups</span></button>
+    <button class="tab" role="tab" data-tab="set" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span class="lb">Settings</span><span class="n" id="n-set"></span></button>
+  </nav>
+  <div class="strip" id="strip"></div>
+  <button class="selfstrip" id="self-strip" hidden></button>
+  
+</aside>
+<main class="app">
+  <header class="ptop"><div class="rbar" aria-hidden="true"><span>EMU VAULT</span></div><span class="logo sm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M7.5 12h3M9 10.5v3"/><circle cx="15.5" cy="11" r=".9" fill="currentColor" stroke="none"/><circle cx="17.5" cy="13" r=".9" fill="currentColor" stroke="none"/></svg></span><h2 class="ph"><span class="pu">emu@vault</span><span class="pc">:~/</span><span id="ptitle">Home</span><span class="pc">$&nbsp;</span><span class="cur" aria-hidden="true">_</span></h2><span class="ptools"><button class="tbtn" data-search title="Search everything (/)" aria-label="Search everything"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button class="tbtn gear" id="gear" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></span></header>
+
+  <section id="view-home" class="view"></section>
+  <section id="view-inbox" class="view" hidden></section>
+
+  <section id="view-emu" class="view" hidden>
+    <div id="myapps"></div>
+    <div id="old-apps" hidden>
+    <div class="pack" id="pack"></div>
+    <div class="filters" style="margin-top:14px">
+      <input class="search" id="q" type="search" placeholder="Search by name or system, e.g. PlayStation 2" aria-label="Search">
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="bar" style="margin-block:14px 6px">
+      <div class="left">
+        <button class="btn primary" id="upd-all">Update all</button>
+        <button class="btn" id="check">Check for updates</button>
+      </div>
+
+    </div>
+    <div id="groups" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+  </section>
+  <section id="view-bios" class="view" hidden></section>
+  <section id="view-roms" class="view" hidden></section>
+  <section id="view-bk" class="view" hidden></section>
+  <section id="view-coll" class="view" hidden></section>
+  <section id="view-set" class="view" hidden></section>
+
+  <details class="log"><summary>Activity</summary><ol id="log"></ol></details>
+</main>
+</div>
+<div class="scrim" id="sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title">
+    <div class="sheet-h"><div style="min-width:0;flex:1"><div class="rbar" aria-hidden="true" style="margin-bottom:8px"><span>EMU VAULT</span></div><div class="step" id="sh-step"></div><h2 id="sh-title"></h2></div><button class="x" data-closeadd="1" aria-label="Close">×</button></div>
+    <div class="sheet-b" id="sh-body"></div>
+    <div class="sheet-f" id="sh-foot"></div>
+  </div>
+</div>
+<div class="lbx" id="lbx" hidden role="dialog" aria-modal="true" aria-labelledby="lbx-t">
+  <div class="lbx-top"><span class="mono" id="lbx-n"></span><button class="x" id="lbx-x" aria-label="Close">×</button></div>
+  <div class="lbx-stage" id="lbx-stage"><button class="lbx-nav prev" id="lbx-prev" aria-label="Previous game">‹</button><div class="lbx-cov" id="lbx-cov"></div><button class="lbx-nav next" id="lbx-next" aria-label="Next game">›</button></div>
+  <div class="lbx-info" id="lbx-info"></div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<div class="ma-veil" id="ma-veil" hidden><div class="ma-sheet" id="ma-sheet" role="dialog" aria-modal="true" aria-label="Add an app"></div></div>
+<div class="cmdk" id="cmdk" hidden role="dialog" aria-modal="true" aria-label="Search everything"><div class="cmdbox"><input id="cmdk-q" type="search" placeholder="Search apps, games, BIOS files, settings…" aria-label="Search everything" autocomplete="off"><div id="cmdk-list"></div><div class="cmdfoot"><span><span class="kbd">↑↓</span> move</span><span><span class="kbd">Enter</span> open</span><span><span class="kbd">Esc</span> close</span><span><span class="kbd">/</span> or <span class="kbd">Ctrl K</span> from anywhere</span></div></div></div>
+<button class="notif" id="notif" hidden></button>
+<div class="padbar" id="padbar" hidden aria-hidden="true"><span><b>A</b>Select</span><span><b>B</b>Back</span><span class="opt2"><b>≡</b>Search</span><span>LB / RB Tabs</span><span class="opt2">LT / RT Page</span></div>
+<script src="gog.js"></script>
+<script src="setup.js"></script>
+<script src="preview.js"></script>
+<script src="bridge.js"></script>
+<script src="perf.js"></script>
+<script src="rules.js"></script>
+<script src="inboxui.js"></script>
+<script src="keys.js"></script>
+<script src="full.js"></script>
+<script src="esde.js"></script>
+<script src="duptest.js"></script>
+<script src="appsplat.js"></script>
+<script src="biosown.js"></script>
+<script src="raextras.js"></script>
+<script src="simple.js"></script>
+<script src="biostabs.js"></script>
+<script src="appsnav.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>
