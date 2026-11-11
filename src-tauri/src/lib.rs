@@ -23,6 +23,7 @@ mod retroarch;
 mod roms;
 mod saves;
 mod setupcheck;
+mod selfupd;
 mod sources;
 mod store;
 mod ui2;
@@ -1255,6 +1256,10 @@ pub fn run() {
             gog::gog_logout,
             gog::gog_refresh,
             gog::gog_view,
+            selfupd::self_check,
+            selfupd::self_download,
+            selfupd::self_install,
+            selfupd::self_open_deb,
             gog::gog_set,
             gog::gog_download,
             gog::gog_pause,

@@ -1,0 +1,13 @@
+/* 0.16: Emu Vault updates itself (selfupd.js) */
+#self-sec .su-body{display:flex;flex-direction:column;gap:10px}
+.su-bar{height:10px;border:1px solid var(--line,#47463f);background:var(--panel,#2e2e2b)}
+.su-bar i{display:block;height:100%;background:var(--accent,#f2a73a);transition:width .15s linear}
+.su-pt{margin:0}
+.su-notes{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line,#47463f);background:var(--inset,rgba(0,0,0,.18));font-size:13px}
+.su-skip{margin-left:auto;font-size:12.5px}
+#selfupd{position:fixed;inset:0;z-index:9998;background:rgba(20,20,19,.86);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+#selfupd .su-box{width:100%;max-width:620px;display:flex;flex-direction:column;gap:14px;background:var(--bg,#262624);border:1px solid var(--accent,#f2a73a);padding:22px 26px;box-sizing:border-box;max-height:100%;overflow:auto}
+#selfupd .su-kick{font-size:11px;letter-spacing:1px;color:var(--muted,#918d82)}
+#selfupd .su-body{display:flex;flex-direction:column;gap:12px}
+#selfupd .gact{flex-wrap:wrap;align-items:center}
+@media (prefers-reduced-motion:reduce){.su-bar i{transition:none}}

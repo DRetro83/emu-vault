@@ -116,6 +116,7 @@ emu@vault/
 
 - **Your files stay yours.** Emu Vault never uploads your games, BIOS or saves anywhere. Everything it moves shows up in Recent changes, with Undo.
 - **No ROMs or BIOS included.** Emu Vault organizes the files you own; it doesn't provide them.
+- **Updates itself.** Emu Vault checks this page for a new release on startup and installs it with one click, keeping your vault and settings. You can turn the check off.
 - **Controller friendly.** Move through the app with a gamepad, handy on the Steam Deck.
 
 ## Credits
