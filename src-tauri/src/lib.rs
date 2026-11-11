@@ -1260,6 +1260,7 @@ pub fn run() {
             selfupd::self_download,
             selfupd::self_install,
             selfupd::self_open_deb,
+            selfupd::self_note,
             gog::gog_set,
             gog::gog_download,
             gog::gog_pause,

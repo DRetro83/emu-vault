@@ -109,6 +109,9 @@ document.addEventListener("click", ev => {
 document.addEventListener("keydown", ev => { if (ev.key === "Escape" && document.getElementById("selfupd") && U.st !== "downloading" && U.st !== "installing") closeWin(); });
 T.event.listen("self-progress", e => { U.got = e.payload.got; U.total = e.payload.total || U.total; if (U.st === "downloading") sync(); });
 
+// 0.16.2: after an update, say where the new .sh went (or that the old one is still there)
+inv("self_note").then(t => { if (!t) return; typeof log === "function" && log(t); setTimeout(() => say(t), 2500); }).catch(() => {});
+
 // on startup: once the vault is loaded and the boot screen is gone
 let tries = 0;
 const wait = setInterval(async () => {

@@ -224,7 +224,19 @@ pub async fn self_install(app: tauri::AppHandle, path: String) -> Result<String,
         // the .sh unpacks into ~/.local/share/emu-vault/<new version>, removes the old one and starts;
         // --install also points the app-menu entry at the new version when you had one
         let menu = dirs::data_dir().unwrap_or_default().join("applications/emu-vault.desktop").exists();
-        detach("sleep 1; exec sh \"$1\" $2", &[&path, if menu { "--install" } else { "" }])?;
+        // 0.16.2: the new .sh takes the old one's place (same folder, new name); if that can't, it runs from the cache
+        let run = match replace_sh(&p, &name) {
+            Ok(Some(to)) => {
+                note(&format!("Updated. {} replaced {} in {}.", name, sh_name(&to.old), to.new.parent().map(|d| d.display().to_string()).unwrap_or_default()));
+                to.new.to_string_lossy().into_owned()
+            }
+            Ok(None) => path.clone(),
+            Err(e) => {
+                note(&format!("Updated, but your old .sh is still there ({e}). The new {name} is in {}.", cache.display()));
+                path.clone()
+            }
+        };
+        detach("sleep 1; exec sh \"$1\" $2", &[&run, if menu { "--install" } else { "" }])?;
         app.exit(0);
         return Ok("restarting".into());
     }
@@ -245,6 +257,87 @@ pub async fn self_install(app: tauri::AppHandle, path: String) -> Result<String,
     } else {
         Err("That isn't an Emu Vault release file.".into())
     }
+}
+
+// ---- 0.16.2: the .sh file you start Emu Vault with follows the update
+// The .sh start script passes its own path in EMU_VAULT_SH. When it isn't the copy in the update cache it is
+// remembered (~/.config/emu-vault/sh-path), so an Emu Vault started from the app menu knows it too.
+struct Moved {
+    old: PathBuf,
+    new: PathBuf,
+}
+fn sh_name(p: &Path) -> String {
+    p.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default()
+}
+fn sh_saved() -> PathBuf {
+    dirs::config_dir().unwrap_or_default().join("emu-vault/sh-path")
+}
+fn note_file() -> PathBuf {
+    dirs::cache_dir().unwrap_or_else(|| PathBuf::from("/tmp")).join("emu-vault/update-note.txt")
+}
+fn note(t: &str) {
+    let f = note_file();
+    if let Some(d) = f.parent() {
+        let _ = std::fs::create_dir_all(d);
+    }
+    let _ = std::fs::write(f, t);
+}
+/// an Emu Vault .sh of ours, outside the update cache
+fn is_our_sh(p: &Path, cache: &Path) -> bool {
+    let n = sh_name(p);
+    p.is_absolute() && p.is_file() && !p.starts_with(cache) && n.starts_with("emu-vault-") && n.ends_with(".sh")
+}
+/// the .sh this copy was started from (or last started from)
+fn current_sh(cache: &Path) -> Option<PathBuf> {
+    let env = std::env::var_os("EMU_VAULT_SH").map(PathBuf::from).filter(|p| is_our_sh(p, cache));
+    if let Some(p) = env {
+        let f = sh_saved();
+        if let Some(d) = f.parent() {
+            let _ = std::fs::create_dir_all(d);
+        }
+        let _ = std::fs::write(&f, p.to_string_lossy().as_bytes());
+        return Some(p);
+    }
+    let saved = std::fs::read_to_string(sh_saved()).ok().map(|t| PathBuf::from(t.trim()));
+    saved.filter(|p| is_our_sh(p, cache))
+}
+/// Copies the downloaded .sh next to the old one under its own name and removes the old one.
+/// Ok(None): no old .sh known (started from a dev build, the .deb, or a .sh in the cache).
+fn replace_sh(new: &Path, name: &str) -> Result<Option<Moved>, String> {
+    let cache = dirs::cache_dir().unwrap_or_default().join("emu-vault/update");
+    let Some(old) = current_sh(&cache) else { return Ok(None) };
+    let dir = old.parent().ok_or("no folder")?;
+    let to = dir.join(name);
+    let tmp = dir.join(format!(".{name}.part"));
+    let copy = || -> std::io::Result<()> {
+        std::fs::copy(new, &tmp)?;
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::PermissionsExt;
+            std::fs::set_permissions(&tmp, std::fs::Permissions::from_mode(0o755))?;
+        }
+        std::fs::rename(&tmp, &to)
+    };
+    if let Err(e) = copy() {
+        let _ = std::fs::remove_file(&tmp);
+        return Err(format!("can't write in {}: {e}", dir.display()));
+    }
+    if old != to {
+        let _ = std::fs::remove_file(&old);
+    }
+    let _ = std::fs::write(sh_saved(), to.to_string_lossy().as_bytes());
+    Ok(Some(Moved { old, new: to }))
+}
+
+/// On startup: remembers which .sh started this copy, and gives the note the last update left (once).
+#[tauri::command]
+pub fn self_note() -> Option<String> {
+    let cache = dirs::cache_dir().unwrap_or_default().join("emu-vault/update");
+    let _ = current_sh(&cache);
+    let f = note_file();
+    let t = std::fs::read_to_string(&f).ok()?;
+    let _ = std::fs::remove_file(&f);
+    Some(t).filter(|t| !t.trim().is_empty())
 }
 
 /// The downloaded .deb in your file manager / software installer, when pkexec isn't there or you cancelled.
@@ -282,5 +375,32 @@ mod tests {
         assert_eq!(pick(&l, "lite").unwrap().name, "emu-vault-lite-0.16.0.sh");
         assert_eq!(pick(&l, "deb").unwrap().name, "emu-vault_0.16.0_amd64.deb");
         assert!(pick(&l, "other").is_none());
+    }
+
+    #[test]
+    fn sh_follows_update() {
+        let t = std::env::temp_dir().join(format!("evsh-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&t);
+        let (desk, cache) = (t.join("Desktop"), t.join("cache"));
+        std::fs::create_dir_all(&desk).unwrap();
+        std::fs::create_dir_all(cache.join("emu-vault/update")).unwrap();
+        std::env::set_var("XDG_CACHE_HOME", &cache);
+        std::env::set_var("XDG_CONFIG_HOME", t.join("config"));
+        let old = desk.join("emu-vault-lite-0.16.2.sh");
+        std::fs::write(&old, "old").unwrap();
+        let new = cache.join("emu-vault/update/emu-vault-lite-0.16.3.sh");
+        std::fs::write(&new, "new").unwrap();
+        // not ours / in the cache: left alone
+        std::env::set_var("EMU_VAULT_SH", &new);
+        assert!(replace_sh(&new, "emu-vault-lite-0.16.3.sh").unwrap().is_none());
+        std::env::set_var("EMU_VAULT_SH", &old);
+        let m = replace_sh(&new, "emu-vault-lite-0.16.3.sh").unwrap().unwrap();
+        assert_eq!(m.new, desk.join("emu-vault-lite-0.16.3.sh"));
+        assert!(!old.exists());
+        assert_eq!(std::fs::read_to_string(&m.new).unwrap(), "new");
+        // started from the app menu next time: the remembered path is used
+        std::env::remove_var("EMU_VAULT_SH");
+        assert_eq!(current_sh(&cache.join("emu-vault/update")), Some(m.new.clone()));
+        let _ = std::fs::remove_dir_all(&t);
     }
 }

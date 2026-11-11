@@ -17,6 +17,13 @@ if [ "$1" = "--uninstall" ]; then
   exit 0
 fi
 
+# 0.16.2: an older .sh never replaces a newer Emu Vault that is already unpacked: it starts that one
+NEWEST=$(ls -1 "$BASE" 2>/dev/null | grep -E '^[0-9]+(\.[0-9]+)*$' | { printf '%s\n' "$VER"; cat; } | sort -V 2>/dev/null | tail -n 1)
+if [ -n "$NEWEST" ] && [ "$NEWEST" != "$VER" ] && [ -x "$BASE/$NEWEST/AppRun" ]; then
+  echo "Emu Vault $NEWEST is already here (newer than this file, $VER). Starting $NEWEST."
+  DIR="$BASE/$NEWEST"
+fi
+
 if [ ! -x "$DIR/AppRun" ]; then
   echo "Unpacking Emu Vault $VER (once)…"
   rm -rf "$DIR.tmp" && mkdir -p "$DIR.tmp"
@@ -45,6 +52,8 @@ DESK
   echo "Emu Vault is in your app menu now. Starting it…"
 fi
 
+# the app moves this file along when it updates itself
+export EMU_VAULT_SH="$ME"
 exec "$DIR/AppRun" "$@"
 exit 0
 __PAYLOAD__
