@@ -414,3 +414,8 @@ if 'selfupd.js' not in html:
     html=html.replace('<script src="menu.js"></script>','<script src="menu.js"></script>\n<script src="selfupd.js"></script>',1)
     html=html.replace('</head>','<link rel="stylesheet" href="selfupd.css">\n</head>',1)
     open(UI+'index.html','w').write(html)
+# 0.16.1: switch for the startup screen in Settings › Look (splashset.js after selfupd.js)
+html=open(UI+'index.html').read()
+if 'splashset.js' not in html:
+    html=html.replace('<script src="selfupd.js"></script>','<script src="selfupd.js"></script>\n<script src="splashset.js"></script>',1)
+    open(UI+'index.html','w').write(html)

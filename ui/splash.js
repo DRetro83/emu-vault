@@ -1,6 +1,6 @@
 // 0.15: the startup screen. The Emu Vault logo, a short check of your vault (ROMs, BIOS, apps) and a bar,
 // then it fades out. Any key, click or controller button skips it. Only in the app (not in the preview).
-// Own module: remove this file and splash.css from index.html to take it out. Off: localStorage ev-splash = "off".
+// Own module: remove this file and splash.css from index.html to take it out. Off: localStorage ev-splash = "off" (the switch is in Settings › Look, splashset.js).
 (() => {
 const T = window.__TAURI__;
 let off = false; try { off = localStorage.getItem("ev-splash") === "off"; } catch (e) {}
