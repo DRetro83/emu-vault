@@ -214,6 +214,7 @@ fn detach(script: &str, args: &[&str]) -> Result<(), String> {
 /// Installs the downloaded file and restarts Emu Vault. For the .deb the system asks for your password.
 #[tauri::command]
 pub async fn self_install(app: tauri::AppHandle, path: String) -> Result<String, String> {
+    crate::linux_only("Updating itself")?;
     let p = PathBuf::from(&path);
     let cache = dirs::cache_dir().unwrap_or_default().join("emu-vault/update");
     if !p.starts_with(&cache) || !p.is_file() {
@@ -343,6 +344,7 @@ pub fn self_note() -> Option<String> {
 /// The downloaded .deb in your file manager / software installer, when pkexec isn't there or you cancelled.
 #[tauri::command]
 pub fn self_open_deb() -> Result<(), String> {
+    crate::linux_only("Installing the .deb")?;
     let dir = dirs::cache_dir().unwrap_or_default().join("emu-vault/update");
     let f = std::fs::read_dir(&dir).map_err(|e| e.to_string())?.flatten().map(|e| e.path()).find(|p| p.extension().is_some_and(|x| x == "deb")).ok_or("No downloaded .deb")?;
     std::process::Command::new("xdg-open").arg(&f).spawn().map(|_| ()).map_err(|e| e.to_string())

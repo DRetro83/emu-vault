@@ -11,6 +11,8 @@ const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 const mb = b => (b / 1048576).toFixed(b > 104857600 ? 0 : 1) + " MB";
 const say = m => typeof toast === "function" && toast(m);
 const KIND = { sh: "the .sh", lite: "the lite .sh", deb: "the .deb", other: "a copy that can't update itself" };
+const WIN = /Windows/i.test(navigator.userAgent);
+if (WIN) KIND.other = "the portable .exe (download new versions from the release page for now)";
 // idle | checking | current | available | downloading | ready | installing | error
 const U = { st: "idle", info: null, err: "", got: 0, total: 0, path: "", denied: "" };
 const auto = () => ls("ev-self-auto") !== "0";
@@ -76,7 +78,7 @@ function body(win){
 selfHTML = function(){
   const I = U.info, cur = (I && I.current) || (S.self && S.self.ver) || "";
   return `<div class="form set-sec" id="self-sec"><h2>Emu Vault</h2>
-    <div class="selfhead"><div><div class="selfver mono">v${esc(cur)}</div><div class="hint">${I ? `Installed with ${esc(KIND[I.kind])}` : "Linux"} · new versions come from <a href="https://github.com/DRetro83/emu-vault/releases">github.com/DRetro83/emu-vault</a></div></div>
+    <div class="selfhead"><div><div class="selfver mono">v${esc(cur)}</div><div class="hint">${I ? `Installed with ${esc(KIND[I.kind])}` : (WIN ? "Windows" : "Linux")} · new versions come from <a href="https://github.com/DRetro83/emu-vault/releases">github.com/DRetro83/emu-vault</a></div></div>
       ${U.st === "checking" || U.st === "downloading" || U.st === "installing" ? "" : `<button class="btn small" data-su="check">Check for updates</button>`}</div>
     <div class="su-body">${body(false)}</div>
     <div class="field"><label class="inline" for="self-auto"><input type="checkbox" id="self-auto" ${auto() ? "checked" : ""}> Check for a new Emu Vault on startup</label></div>

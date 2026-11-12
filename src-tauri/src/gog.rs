@@ -2764,6 +2764,7 @@ fn copy_tree(from: &Path, to: &Path, skip: &[&str]) -> std::io::Result<()> {
 }
 
 fn spawn_heroic(core: &Core, args: &[String]) -> Result<(), String> {
+    crate::linux_only("Starting Heroic")?;
     let sh = write_heroic_sh(core)?;
     if !heroic_dir(core).join("current.AppImage").exists() {
         return Err("Heroic is not in the vault yet. Press Get Heroic in GOG Settings.".into());

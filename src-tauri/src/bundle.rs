@@ -132,6 +132,7 @@ fn q(p: &Path) -> String {
 /// Make emu-vault-full-<version>.sh at `to` (a file path).
 #[tauri::command]
 pub async fn full_make(app: tauri::AppHandle, core: tauri::State<'_, Core>, to: String) -> Result<String, String> {
+    crate::linux_only("Making the full package")?;
     let pkg = pkg_dir().ok_or("Make it from the .sh version of Emu Vault.")?;
     let r = root(&core);
     let ra = ra_parts(&r).filter(|_| crate::retroarch::ra_on(&core));

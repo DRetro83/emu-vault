@@ -401,6 +401,7 @@ pub async fn ra_solo_get(app: tauri::AppHandle, core: tauri::State<'_, Core>) ->
 
 #[tauri::command]
 pub fn ra_solo_start(core: tauri::State<Core>) -> Result<(), String> {
+    crate::linux_only("Starting RetroArch")?;
     let img = solo_img(&core).ok_or("RetroArch isn't in the vault yet.")?;
     let mut c = std::process::Command::new(&img);
     c.current_dir(img.parent().unwrap()).stdin(std::process::Stdio::null()).stdout(std::process::Stdio::null()).stderr(std::process::Stdio::null());

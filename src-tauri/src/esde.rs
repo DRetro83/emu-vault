@@ -254,6 +254,7 @@ pub async fn esde_setup(core: tauri::State<'_, Core>) -> Result<String, String> 
 
 #[tauri::command]
 pub fn esde_start(core: tauri::State<Core>) -> Result<(), String> {
+    crate::linux_only("Starting ES-DE")?;
     let (prog, mut args, _) = launcher(&core).ok_or("ES-DE isn't on this computer yet. Press \"Download ES-DE\" first.")?;
     let (root, in_vault) = {
         let c = core.cfg.lock().unwrap();

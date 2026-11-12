@@ -15,6 +15,7 @@ pub struct ImportOut {
 /// `dry`: only show what would happen. `fix`: swap wrong dumps in the vault for right ones (old ones to bios/_replaced/).
 #[tauri::command]
 pub async fn bios_import(core: tauri::State<'_, Core>, src: String, dry: bool, fix: bool) -> Result<ImportOut, String> {
+    crate::linux_only("Sorting BIOS files from a folder or pack")?;
     let root = core.cfg.lock().unwrap().root.clone();
     if root.is_empty() {
         return Err("Choose your main folder first.".into());

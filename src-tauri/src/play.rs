@@ -567,6 +567,7 @@ fn game_file(path: &str) -> String {
 
 #[tauri::command]
 pub fn play(app: tauri::AppHandle, core: tauri::State<Core>, path: String, sys: String, with: Option<String>) -> Result<String, String> {
+    crate::linux_only("Starting a game")?;
     if !crate::retroarch::ra_on(&core) {
         return Err("Games start in ES-DE or RetroArch now. Playing from the vault can be turned back on in Settings.".into());
     }

@@ -987,6 +987,14 @@ fn delete_version(core: tauri::State<Core>, path: String) -> Result<Overview, St
 
 /// Start a desktop program (file manager, browser) without the settings of Emu Vault's own
 /// bundled libraries (the .sh / AppImage version sets those, and they break other programs).
+/// Windows: a feature that still needs Linux says so, instead of failing on a missing program.
+pub(crate) fn linux_only(what: &str) -> Result<(), String> {
+    if cfg!(windows) {
+        return Err(format!("{what} doesn't work on Windows yet. It comes in a later version of Emu Vault for Windows."));
+    }
+    Ok(())
+}
+
 pub(crate) fn desktop_cmd(prog: &str) -> std::process::Command {
     let mut c = std::process::Command::new(prog);
     let appdir = std::env::var("APPDIR").unwrap_or_default();

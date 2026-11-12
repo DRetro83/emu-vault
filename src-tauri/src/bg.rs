@@ -76,6 +76,9 @@ fn systemctl(args: &[&str]) -> bool {
 /// Write (or remove) the timer, so it matches the settings. Also called when the window starts, so a new
 /// version (the .sh unpacks to a new folder) is the one that runs.
 pub fn apply(cfg: &store::BgCfg) -> Result<(), String> {
+    if cfg.on {
+        crate::linux_only("Checking while Emu Vault is closed")?;
+    }
     let d = unit_dir();
     let svc = d.join(format!("{UNIT}.service"));
     let tim = d.join(format!("{UNIT}.timer"));
