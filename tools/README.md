@@ -42,19 +42,27 @@ npx tauri build --bundles appimage,deb
 ## 4. Make the three release files
 
 ```sh
-sh tools/mkpkg.sh 0.16.0 out
+sh tools/mkpkg.sh 0.16.3 out
 ```
 
 `out/` then has:
 
-- `emu-vault-0.16.0.sh`: standalone, with chdman and xdelta3 (`tools/head-template.sh` is its start script)
-- `emu-vault-lite-0.16.0.sh`: the same without chdman and xdelta3
-- `emu-vault_0.16.0_amd64.deb`
+- `emu-vault-0.16.3.sh`: standalone, with chdman and xdelta3 (`tools/head-template.sh` is its start script)
+- `emu-vault-lite-0.16.3.sh`: the same without chdman and xdelta3
+- `emu-vault_0.16.3_amd64.deb`
 
 ## 5. Release
 
-1. Set the version in `src-tauri/Cargo.toml` and `src-tauri/tauri.conf.json` **before** step 3.
-2. On GitHub: **Releases › Draft a new release**, tag `v<version>`, and attach the three files.
+GitHub builds the three files itself (`.github/workflows/release.yml`):
+
+1. On GitHub: **Releases › Draft a new release**, tag `v<version>` (for example `v0.16.3`), write the notes and press **Publish release**.
+2. GitHub builds the `.sh`, lite `.sh` and `.deb` and attaches them to that release. It takes about 15 to 20 minutes; follow it under **Actions**. If it fails, the release stays without files and the run shows why.
 3. Lines starting with `- ` in the release notes show up in the app's update window under "What's new".
 
-The app finds new versions by the release tag (`v0.16.0`) and picks its file by name, so keep the file names as `mkpkg.sh` makes them.
+The tag decides the version: the build sets it in `src-tauri/Cargo.toml` and `src-tauri/tauri.conf.json` for you. Still set it in those files in the repo, so a local build has the right number.
+
+The app finds new versions by the release tag (`v0.16.3`) and picks its file by name, so keep the file names as `mkpkg.sh` makes them.
+
+**A test build without a release:** Actions › Build › Run workflow. The files are under the run's "Artifacts" (zipped) for 5 days. A change to the workflow file starts one by itself.
+
+**By hand, as before:** steps 1 to 4 above, then attach the three files from `out/` to the release yourself.

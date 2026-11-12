@@ -1,6 +1,6 @@
 [package]
 name = "emu-vault"
-version = "0.16.2"
+version = "0.16.3"
 description = "Keeps your emulators, BIOS files and ROM folders up to date and backed up"
 edition = "2021"
 

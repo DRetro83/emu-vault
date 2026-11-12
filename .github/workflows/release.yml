@@ -1,0 +1,93 @@
+# Builds Emu Vault's three Linux files and puts them on the release.
+#   Release published on GitHub (tag v1.2.3)  -> builds 1.2.3 and attaches the .sh, lite .sh and .deb to it.
+#   Run by hand (Actions › Build › Run workflow), or a change to this file -> builds only, as a test;
+#     the files are under the run's "Artifacts" for a few days and no release is touched.
+name: Build
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/release.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.event.release.tag_name || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || github.sha }}
+
+      - name: Version
+        id: v
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            V="${{ github.event.release.tag_name }}"; V="${V#v}"; V="${V#V}"
+            echo "$V" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$' || { echo "::error::The tag must look like v1.2.3 (it is ${{ github.event.release.tag_name }})"; exit 1; }
+            # the tag decides the version, so a forgotten bump in the files can't give the wrong version
+            sed -i "0,/^version = \".*\"/s//version = \"$V\"/" src-tauri/Cargo.toml
+            sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$V\"/" src-tauri/tauri.conf.json
+          else
+            V=$(grep -m1 '"version"' src-tauri/tauri.conf.json | sed 's/.*: "\(.*\)".*/\1/')
+          fi
+          echo "v=$V" >> "$GITHUB_OUTPUT"
+          echo "Building Emu Vault $V"
+
+      - name: What the build needs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq build-essential curl file patchelf xdg-utils libwebkit2gtk-4.1-dev libssl-dev \
+            libayatana-appindicator3-dev librsvg2-dev mame-tools xdelta3 python3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Build
+        run: |
+          npm ci
+          npx tauri build --bundles appimage,deb
+
+      - name: The three files
+        run: |
+          sh tools/mkpkg.sh "${{ steps.v.outputs.v }}" out
+          V="${{ steps.v.outputs.v }}"
+          for f in "emu-vault-$V.sh" "emu-vault-lite-$V.sh" "emu-vault_${V}_amd64.deb"; do test -s "out/$f" || { echo "::error::out/$f is missing"; exit 1; }; done
+          ls -la out
+
+      - name: Put them on the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V="${{ steps.v.outputs.v }}"
+          gh release upload "${{ github.event.release.tag_name }}" --clobber \
+            "out/emu-vault-$V.sh" "out/emu-vault-lite-$V.sh" "out/emu-vault_${V}_amd64.deb"
+
+      - name: Keep them with the run (test builds)
+        if: github.event_name != 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: emu-vault-${{ steps.v.outputs.v }}-linux
+          path: |
+            out/*.sh
+            out/*.deb
+            !out/head.sh
+          retention-days: 5
