@@ -10,7 +10,7 @@
       { "title": "Emu Vault", "width": 1180, "height": 800, "minWidth": 380, "minHeight": 560 }
     ],
     "security": { "csp": "default-src 'self'; img-src 'self' data: asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' ipc: http://ipc.localhost blob: data:",
-      "assetProtocol": { "enable": true, "scope": ["$HOME/**", "/media/**", "/run/media/**", "/mnt/**"] } }
+      "assetProtocol": { "enable": true, "scope": ["$HOME/**", "/media/**", "/run/media/**", "/mnt/**", "?:/**"] } }
   },
   "bundle": {
     "active": true,
@@ -18,7 +18,7 @@
     "category": "Utility",
     "shortDescription": "Emulator, BIOS and ROM keeper",
     "longDescription": "Emu Vault follows new versions of your emulators, downloads them, keeps the last versions and keeps your BIOS and ROM folders in order.",
-    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.png"],
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.png", "icons/icon.ico"],
     "linux": { "deb": { "depends": ["mame-tools", "xdelta3"] } }
   }
 }

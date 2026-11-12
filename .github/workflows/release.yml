@@ -1,6 +1,7 @@
 # Builds Emu Vault's three Linux files and puts them on the release.
-#   Release published on GitHub (tag v1.2.3)  -> builds 1.2.3 and attaches the .sh, lite .sh and .deb to it.
-#   Run by hand (Actions › Build › Run workflow), or a change to this file -> builds only, as a test;
+#   Release published on GitHub (tag v1.2.3)  -> builds 1.2.3 and attaches the .sh, lite .sh and .deb to it,
+#     and the portable Windows .exe (emu-vault-1.2.3-windows-portable.exe).
+#   Run by hand (Actions › Build › Run workflow), or a push to main -> builds only, as a test;
 #     the files are under the run's "Artifacts" for a few days and no release is touched.
 name: Build
 
@@ -9,8 +10,7 @@ on:
     types: [published]
   workflow_dispatch:
   push:
-    branches: [main]
-    paths: [".github/workflows/release.yml"]
+    branches: [main, windows]
 
 permissions:
   contents: write
@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   linux:
+    if: github.ref != 'refs/heads/windows'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
@@ -90,4 +91,69 @@ jobs:
             out/*.sh
             out/*.deb
             !out/head.sh
+          retention-days: 5
+
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || github.sha }}
+
+      - name: Version
+        id: v
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            V="${{ github.event.release.tag_name }}"; V="${V#v}"; V="${V#V}"
+            echo "$V" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$' || { echo "::error::The tag must look like v1.2.3"; exit 1; }
+            sed -i "0,/^version = \".*\"/s//version = \"$V\"/" src-tauri/Cargo.toml
+            sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$V\"/" src-tauri/tauri.conf.json
+          else
+            V=$(grep -m1 '"version"' src-tauri/tauri.conf.json | sed 's/.*: "\(.*\)".*/\1/')
+          fi
+          echo "v=$V" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Build
+        run: |
+          set -o pipefail
+          npm ci
+          npx tauri build --no-bundle 2>&1 | tee build.log
+
+      - name: Show the build errors
+        if: failure()
+        run: python .github/errors.py build.log
+
+      - name: The .exe
+        run: |
+          mkdir -p out
+          cp src-tauri/target/release/emu-vault.exe "out/emu-vault-${{ steps.v.outputs.v }}-windows-portable.exe"
+          ls -la out
+
+      - name: Put it on the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" --clobber "out/emu-vault-${{ steps.v.outputs.v }}-windows-portable.exe"
+
+      - name: Keep it with the run (test builds)
+        if: github.event_name != 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: emu-vault-${{ steps.v.outputs.v }}-windows-portable
+          path: out/*.exe
           retention-days: 5

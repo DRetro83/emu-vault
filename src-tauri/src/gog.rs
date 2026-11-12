@@ -1790,7 +1790,7 @@ async fn piece(
     gid: u64,
     name: &str,
 ) -> Result<bool, String> {
-    use std::os::unix::fs::FileExt;
+    use crate::gog::WriteAt as _;
     let mut tries = 0;
     loop {
         let pos = start + done.load(Ordering::SeqCst);
@@ -3204,5 +3204,29 @@ mod t {
         assert_eq!(custom_name("Baldur's Gate: Enhanced Edition"), "Baldur_s_Gate_Enhanced_Edition");
         assert_eq!(version_in("setup_ai_war_2_5.604_(64bit)_(77001).exe", "setup_ai_war_2_"), "5.604");
         assert_eq!(name_of_url("https://cdn.gog.com/x/setup_a%20b_1.0.exe?t=1"), "setup_a b_1.0.exe");
+    }
+}
+
+/// Write at a position in the file, on Linux and on Windows (the chunks of a GOG download land in one file).
+pub(crate) trait WriteAt {
+    fn write_all_at(&self, buf: &[u8], at: u64) -> std::io::Result<()>;
+}
+impl WriteAt for std::fs::File {
+    #[cfg(unix)]
+    fn write_all_at(&self, buf: &[u8], at: u64) -> std::io::Result<()> {
+        std::os::unix::fs::FileExt::write_all_at(self, buf, at)
+    }
+    #[cfg(windows)]
+    fn write_all_at(&self, mut buf: &[u8], mut at: u64) -> std::io::Result<()> {
+        use std::os::windows::fs::FileExt;
+        while !buf.is_empty() {
+            let n = self.seek_write(buf, at)?;
+            if n == 0 {
+                return Err(std::io::Error::new(std::io::ErrorKind::WriteZero, "nothing written"));
+            }
+            buf = &buf[n..];
+            at += n as u64;
+        }
+        Ok(())
     }
 }

@@ -802,6 +802,7 @@ mod bios_tests {
         let r = root.to_string_lossy().to_string();
         let sys = super::ra_bios_dir(&r);
         std::fs::create_dir_all(&sys).unwrap();
+        #[cfg(unix)]
         std::os::unix::fs::symlink("nowhere", sys.join("old.bin")).unwrap();
         std::fs::write(sys.join("mine.bin"), b"my own").unwrap();
         let (n, ch) = super::fill_bios(&r, &sys);
