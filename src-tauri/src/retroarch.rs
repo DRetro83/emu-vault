@@ -16,9 +16,17 @@ fn base(core: &Core) -> PathBuf {
     Path::new(&core.cfg.lock().unwrap().root).join("RetroArch")
 }
 fn ra_home(core: &Core) -> PathBuf {
+    // Windows: RetroArch\windows\ holds retroarch.exe with its settings, cores and saves (winplay.rs)
+    if cfg!(windows) {
+        return crate::winplay::ra_dir(&base(core));
+    }
     base(core).join("home/.config/retroarch")
 }
+/// What starts the vault's RetroArch: retroarch.sh on Linux, retroarch.exe on Windows.
 pub fn script(core: &Core) -> PathBuf {
+    if cfg!(windows) {
+        return crate::winplay::ra_exe(&crate::winplay::ra_dir(&base(core)));
+    }
     base(core).join("retroarch.sh")
 }
 pub fn cores_dir(core: &Core) -> PathBuf {
@@ -99,6 +107,9 @@ pub struct RaCore {
 }
 
 fn installed_version(core: &Core) -> String {
+    if cfg!(windows) {
+        return std::fs::read_to_string(ra_home(core).join("version.txt")).unwrap_or_default().trim().to_string();
+    }
     std::fs::read_link(base(core).join("app/current.AppImage"))
         .ok()
         .and_then(|p| p.parent().and_then(|v| v.file_name()).map(|v| v.to_string_lossy().to_string()))
@@ -128,7 +139,7 @@ fn wanted_cores(core: &Core) -> Vec<RaCore> {
             if let Some(x) = out.iter_mut().find(|x| x.core == c) {
                 x.systems.push(s.clone());
             } else {
-                out.push(RaCore { systems: vec![s.clone()], core: c.to_string(), name: n.to_string(), have: cd.join(format!("{c}_libretro.so")).is_file() });
+                out.push(RaCore { systems: vec![s.clone()], core: c.to_string(), name: n.to_string(), have: cd.join(crate::winplay::core_file(c)).is_file() });
             }
         }
     }
@@ -136,6 +147,9 @@ fn wanted_cores(core: &Core) -> Vec<RaCore> {
 }
 
 fn other_retroarch() -> String {
+    if cfg!(windows) {
+        return String::new();
+    }
     let h = dirs::home_dir().unwrap_or_default();
     if h.join(".var/app/org.libretro.RetroArch").is_dir() {
         return "Flatpak".into();
@@ -289,7 +303,7 @@ pub async fn rarch_install(app: tauri::AppHandle, core: tauri::State<'_, Core>) 
     let _ = std::fs::remove_dir_all(&tmp);
     std::fs::create_dir_all(&tmp).map_err(|e| e.to_string())?;
     let z = tmp.join("RetroArch.7z");
-    fetch_to(&app, &core, &format!("{}stable/{ver}/linux/x86_64/RetroArch.7z", buildbot()), &z, "RetroArch").await?;
+    fetch_to(&app, &core, &format!("{}stable/{ver}/{}/x86_64/RetroArch.7z", buildbot(), crate::winplay::bb_os()), &z, "RetroArch").await?;
     let _ = app.emit("ra-dl", ("Unpacking".to_string(), 0u64, 0u64));
     let x = tmp.join("x");
     {
@@ -299,6 +313,18 @@ pub async fn rarch_install(app: tauri::AppHandle, core: tauri::State<'_, Core>) 
             .map_err(|e| e.to_string())?
             .map_err(|e| format!("Unpacking RetroArch didn't work: {e}"))?;
     }
+    if cfg!(windows) {
+        // Windows: the RetroArch folder goes over RetroArch\windows\ (your settings, cores and saves stay)
+        let from = crate::winplay::folder_with(&x, "retroarch.exe").ok_or("There was no retroarch.exe in the download.")?;
+        let to = ra_home(&core);
+        crate::winplay::merge_program(&from, &to).map_err(|e| format!("Putting RetroArch in the vault didn't work (is it still open?): {e}"))?;
+        let _ = std::fs::write(to.join("version.txt"), &ver);
+        let _ = std::fs::remove_dir_all(&tmp);
+        setup(&core)?;
+        core.log(format!("RetroArch {ver} for Windows is in the vault ({})", to.display()));
+        return Ok(ver);
+    }
+    let _ = &vdir;
     let img = find_named(&x, &|n: &str| n.to_lowercase().ends_with(".appimage"), false).ok_or("There was no RetroArch AppImage in the download.")?;
     std::fs::create_dir_all(&vdir).map_err(|e| e.to_string())?;
     let dest = vdir.join(img.file_name().unwrap());
@@ -339,6 +365,10 @@ fn solo_dir(core: &Core) -> PathBuf {
 }
 fn solo_img(core: &Core) -> Option<PathBuf> {
     let d = solo_dir(core);
+    if cfg!(windows) {
+        let exe = crate::winplay::ra_exe(&d);
+        return exe.is_file().then_some(exe);
+    }
     std::fs::read_dir(&d).ok()?.flatten().map(|e| e.path()).find(|p| p.is_file() && p.to_string_lossy().to_lowercase().ends_with(".appimage"))
 }
 
@@ -371,7 +401,7 @@ pub async fn ra_solo_get(app: tauri::AppHandle, core: tauri::State<'_, Core>) ->
     let _ = std::fs::remove_dir_all(&tmp);
     std::fs::create_dir_all(&tmp).map_err(|e| e.to_string())?;
     let z = tmp.join("RetroArch.7z");
-    fetch_to(&app, &core, &format!("{}stable/{ver}/linux/x86_64/RetroArch.7z", buildbot()), &z, "RetroArch").await?;
+    fetch_to(&app, &core, &format!("{}stable/{ver}/{}/x86_64/RetroArch.7z", buildbot(), crate::winplay::bb_os()), &z, "RetroArch").await?;
     let _ = app.emit("ra-dl", ("Unpacking".to_string(), 0u64, 0u64));
     let x = tmp.join("x");
     {
@@ -380,6 +410,15 @@ pub async fn ra_solo_get(app: tauri::AppHandle, core: tauri::State<'_, Core>) ->
             .await
             .map_err(|e| e.to_string())?
             .map_err(|e| format!("Unpacking RetroArch didn't work: {e}"))?;
+    }
+    if cfg!(windows) {
+        // Windows: Launchers\RetroArch\ becomes the portable RetroArch folder (your settings and saves stay)
+        let from = crate::winplay::folder_with(&x, "retroarch.exe").ok_or("There was no retroarch.exe in the download.")?;
+        crate::winplay::merge_program(&from, &d).map_err(|e| format!("Putting RetroArch there didn't work (is it still open?): {e}"))?;
+        let _ = std::fs::write(d.join("version.txt"), &ver);
+        let _ = std::fs::remove_dir_all(&tmp);
+        core.log(format!("RetroArch {ver} for Windows (on its own) is in {}", d.display()));
+        return Ok(ver);
     }
     let img = find_named(&x, &|n: &str| n.to_lowercase().ends_with(".appimage"), false).ok_or("There was no RetroArch AppImage in the download.")?;
     let name = img.file_name().unwrap().to_os_string();
@@ -401,8 +440,11 @@ pub async fn ra_solo_get(app: tauri::AppHandle, core: tauri::State<'_, Core>) ->
 
 #[tauri::command]
 pub fn ra_solo_start(core: tauri::State<Core>) -> Result<(), String> {
-    crate::linux_only("Starting RetroArch")?;
     let img = solo_img(&core).ok_or("RetroArch isn't in the vault yet.")?;
+    if cfg!(windows) {
+        crate::winplay::spawn(&img, &[], false).map_err(|e| format!("RetroArch didn't start: {e}"))?;
+        return Ok(());
+    }
     let mut c = std::process::Command::new(&img);
     c.current_dir(img.parent().unwrap()).stdin(std::process::Stdio::null()).stdout(std::process::Stdio::null()).stderr(std::process::Stdio::null());
     // a PC without FUSE: the AppImage unpacks itself first
@@ -460,6 +502,22 @@ pub fn setup(core: &Core) -> Result<(), String> {
     }
     let cfgp = h.join("retroarch.cfg");
     let mut t = std::fs::read_to_string(&cfgp).unwrap_or_default();
+    if cfg!(windows) {
+        // portable RetroArch for Windows: everything next to retroarch.exe, no start script
+        for (k, v) in crate::winplay::ra_cfg_lines() {
+            t = cfg_put(&t, k, v);
+        }
+        std::fs::write(&cfgp, t).map_err(|e| e.to_string())?;
+        bios_links(core);
+        write_find_rules(core);
+        let mut c = core.cfg.lock().unwrap();
+        let p = h.join("saves").to_string_lossy().to_string();
+        if !c.save_sources.iter().any(|s| s.path == p) {
+            c.save_sources.push(crate::extras::SaveSource { label: "RetroArch for Windows (in the vault)".into(), path: p });
+            let _ = store::save_config(&c);
+        }
+        return Ok(());
+    }
     for (k, v) in [
         ("libretro_directory", "~/.config/retroarch/cores"),
         ("libretro_info_path", "~/.config/retroarch/info"),
@@ -702,7 +760,7 @@ pub async fn rarch_core_again(app: tauri::AppHandle, core: tauri::State<'_, Core
     if name.is_empty() || name.contains('/') || name.contains("..") {
         return Err("No core named".into());
     }
-    let so = cores_dir(&core).join(format!("{name}_libretro.so"));
+    let so = cores_dir(&core).join(crate::winplay::core_file(&name));
     let _ = std::fs::remove_file(&so);
     core.log(format!("Getting the {name} core again"));
     rarch_cores(app, core).await
@@ -720,7 +778,7 @@ pub async fn rarch_cores(app: tauri::AppHandle, core: tauri::State<'_, Core>) ->
     for c in &want {
         let z = tmp.join(format!("{}.zip", c.core));
         let got = async {
-            fetch_to(&app, &core, &format!("{}nightly/linux/x86_64/latest/{}_libretro.so.zip", buildbot(), c.core), &z, &c.name).await?;
+            fetch_to(&app, &core, &format!("{}nightly/{}/x86_64/latest/{}.zip", buildbot(), crate::winplay::bb_os(), crate::winplay::core_file(&c.core)), &z, &c.name).await?;
             let f = std::fs::File::open(&z).map_err(|e| e.to_string())?;
             let mut a = zip::ZipArchive::new(f).map_err(|e| e.to_string())?;
             a.extract(&cd).map_err(|e| e.to_string())
@@ -774,6 +832,11 @@ pub fn rarch_start(core: tauri::State<Core>) -> Result<(), String> {
     let sh = script(&core);
     if !sh.is_file() {
         return Err("RetroArch isn't in the vault yet. Press \"Get RetroArch\" first.".into());
+    }
+    if cfg!(windows) {
+        crate::winplay::spawn(&sh, &[], false).map_err(|e| format!("RetroArch didn't start: {e}"))?;
+        core.log("RetroArch started");
+        return Ok(());
     }
     let child = crate::desktop_cmd(&sh.to_string_lossy())
         .stdin(std::process::Stdio::null())

@@ -42,14 +42,14 @@ npx tauri build --bundles appimage,deb
 ## 4. Make the three release files
 
 ```sh
-sh tools/mkpkg.sh 0.16.4 out
+sh tools/mkpkg.sh 0.16.5 out
 ```
 
 `out/` then has:
 
-- `emu-vault-0.16.4.sh`: standalone, with chdman and xdelta3 (`tools/head-template.sh` is its start script)
-- `emu-vault-lite-0.16.4.sh`: the same without chdman and xdelta3
-- `emu-vault_0.16.4_amd64.deb`
+- `emu-vault-0.16.5.sh`: standalone, with chdman and xdelta3 (`tools/head-template.sh` is its start script)
+- `emu-vault-lite-0.16.5.sh`: the same without chdman and xdelta3
+- `emu-vault_0.16.5_amd64.deb`
 
 ## 5. Release
 

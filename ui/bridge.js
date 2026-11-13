@@ -860,12 +860,12 @@ document.addEventListener("click", async e => {
       OV = await inv("set_enabled", { ids: ["pc.esde"], on: true });
       OV = await inv("check_apps", { ids: ["pc.esde"] });
       const st = await inv("esde_status");
-      if (st.update) toast(`ES-DE ${st.update} is available`); else if (st.managed) toast("ES-DE is up to date"); else { OV = await inv("download_app", { id: "pc.esde", plat: "linux" }); toast("ES-DE is downloaded; Emu Vault keeps it up to date from now on"); }
+      if (st.update) toast(`ES-DE ${st.update} is available`); else if (st.managed) toast("ES-DE is up to date"); else { OV = await inv("download_app", { id: "pc.esde", plat: /Windows/i.test(navigator.userAgent) ? "windows" : "linux" }); toast("ES-DE is downloaded; Emu Vault keeps it up to date from now on"); }
       EVA.refresh?.();
     } else if (what === "download"){
       OV = await inv("set_enabled", { ids: ["pc.esde"], on: true });
       OV = await inv("check_apps", { ids: ["pc.esde"] });
-      OV = await inv("download_app", { id: "pc.esde", plat: "linux" });
+      OV = await inv("download_app", { id: "pc.esde", plat: /Windows/i.test(navigator.userAgent) ? "windows" : "linux" });
       const st = await inv("esde_status"); toast(st.version ? `ES-DE ${st.version} is ready` : "ES-DE is downloaded"); log(`ES-DE downloaded${st.version ? ` (${st.version})` : ""}`);
       EVA.refresh?.();
     } else {

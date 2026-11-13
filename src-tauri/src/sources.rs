@@ -406,7 +406,9 @@ fn windows_score_for(n: &str, want: &str) -> Option<i32> {
     {
         return None;
     }
-    if !(n.contains("win") || n.ends_with(".exe") || n.ends_with(".msi")) {
+    // 0.16.5: a "Portable" zip without "win" in its name is Windows too (ES-DE_3.3.0-x64_Portable.zip)
+    let portable = n.contains("portable") && (n.ends_with(".zip") || n.ends_with(".7z"));
+    if !(n.contains("win") || n.ends_with(".exe") || n.ends_with(".msi") || portable) {
         return None;
     }
     let archs = arch_tokens(n);
@@ -424,6 +426,9 @@ fn windows_score_for(n: &str, want: &str) -> Option<i32> {
     };
     if !archs.is_empty() {
         s += 5;
+    }
+    if portable {
+        s += 10;
     }
     if n.contains("debug") || n.contains("symbols") || n.contains("pdb") {
         s -= 25;
@@ -1064,5 +1069,13 @@ mod tests_v3 {
         let l2 = choose(&rel, &r2, "arm64-v8a", "x86_64", "p");
         assert_eq!(l2.android.unwrap().asset.unwrap().name, "azahar-2123.1-android-vanilla.apk");
         assert!(!l2.choices.contains_key("android"), "your choice settles it");
+    }
+
+    #[test]
+    fn esde_windows_is_the_portable_zip() {
+        let names = ["ES-DE_3.3.0-x64_Portable.zip", "ES-DE_3.3.0-x64.exe", "ES-DE_x64.AppImage", "ES-DE_3.3.0-arm64.dmg"];
+        let best = names.iter().filter_map(|n| windows_score(&n.to_lowercase()).map(|s| (s, *n))).max().map(|x| x.1);
+        assert_eq!(best, Some("ES-DE_3.3.0-x64_Portable.zip"));
+        assert!(linux_score("es-de_3.3.0-x64_portable.zip", "x86_64").is_none() || linux_score("es-de_x64.appimage", "x86_64") > linux_score("es-de_3.3.0-x64_portable.zip", "x86_64"));
     }
 }

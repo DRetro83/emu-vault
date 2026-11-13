@@ -26,6 +26,7 @@ mod selfupd;
 mod setupcheck;
 mod sources;
 mod stick;
+mod winplay;
 mod store;
 mod ui2;
 mod watch;
@@ -614,11 +615,13 @@ pub(crate) struct EsdeApp {
 pub(crate) fn overview_pub(core: &Core) -> EsdeApp {
     let ov = overview(core);
     let a = ov.apps.iter().find(|a| a.id == "pc.esde");
+    // Windows (winplay.rs): the portable zip; Linux: the AppImage
+    let (plat, ext) = if cfg!(windows) { ("windows", ".zip") } else { ("linux", ".appimage") };
     let s = a
-        .and_then(|a| a.plats.iter().find(|p| p.plat == "linux"))
-        .and_then(|p| p.stored.iter().find(|s| s.file.to_lowercase().ends_with(".appimage") && std::path::Path::new(&s.path).is_file()));
+        .and_then(|a| a.plats.iter().find(|p| p.plat == plat))
+        .and_then(|p| p.stored.iter().find(|s| s.file.to_lowercase().ends_with(ext) && std::path::Path::new(&s.path).is_file()));
     let up = a
-        .and_then(|a| a.plats.iter().find(|p| p.plat == "linux"))
+        .and_then(|a| a.plats.iter().find(|p| p.plat == plat))
         .filter(|p| p.status == "update")
         .and_then(|p| p.latest.as_ref())
         .map(|l| l.version.clone())

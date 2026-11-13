@@ -81,6 +81,15 @@ pub fn es_systems(core: &Core) -> EsSystems {
         }
     }
     let Some(img) = crate::overview_pub(core).esde_appimage else { return EsSystems::new() };
+    if cfg!(windows) {
+        // the portable ES-DE: its list is in resources\systems\windows (winplay.rs)
+        let s = crate::winplay::esde_exe(&img).ok().and_then(|e| crate::winplay::esde_systems_xml(&e)).map(|t| parse_es_systems(&t)).unwrap_or_default();
+        if !s.is_empty() {
+            let _ = std::fs::create_dir_all(cache.parent().unwrap());
+            let _ = std::fs::write(&cache, serde_json::to_vec(&(ver, &s)).unwrap_or_default());
+        }
+        return s;
+    }
     let tmp = std::env::temp_dir().join(format!("emuvault-esde-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&tmp);
     let _ = std::fs::create_dir_all(&tmp);
@@ -207,7 +216,7 @@ pub fn play_options(core: tauri::State<Core>) -> Vec<SysPlay> {
                 if !c.core.is_empty() {
                     let v = format!("ra:{}", c.core);
                     if !opts.iter().any(|o| o.0 == v) {
-                        opts.push((v, format!("{} (RetroArch)", c.label), cores.join(format!("{}_libretro.so", c.core)).is_file()));
+                        opts.push((v, format!("{} (RetroArch)", c.label), cores.join(crate::winplay::core_file(&c.core)).is_file()));
                     }
                 } else if let Some((id, _, name, _, _)) = VAULT_EMUS.iter().find(|e| e.1 == c.emulator) {
                     let v = format!("emu:{id}");
@@ -219,7 +228,7 @@ pub fn play_options(core: tauri::State<Core>) -> Vec<SysPlay> {
         }
         if opts.is_empty() {
             if let Some((c, n)) = crate::retroarch::default_core(s) {
-                opts.push((format!("ra:{c}"), format!("{n} (RetroArch)"), cores.join(format!("{c}_libretro.so")).is_file()));
+                opts.push((format!("ra:{c}"), format!("{n} (RetroArch)"), cores.join(crate::winplay::core_file(c)).is_file()));
             }
             for (id, _, name, systems, _) in VAULT_EMUS {
                 if systems.contains(&s.as_str()) {
@@ -233,13 +242,16 @@ pub fn play_options(core: tauri::State<Core>) -> Vec<SysPlay> {
                 for (c, n) in *list {
                     let v = format!("ra:{c}");
                     if !opts.iter().any(|o| o.0 == v) {
-                        opts.push((v, format!("{n} (RetroArch)"), cores.join(format!("{c}_libretro.so")).is_file()));
+                        opts.push((v, format!("{n} (RetroArch)"), cores.join(crate::winplay::core_file(c)).is_file()));
                     }
                 }
             }
         }
         // an emulator you installed as Flatpak (Dolphin: its own Linux version comes only as Flatpak)
         for (id, name, systems, _) in FLATPAKS {
+            if cfg!(windows) {
+                break;
+            }
             if systems.contains(&s.as_str()) {
                 let v = format!("fp:{id}");
                 if !opts.iter().any(|o| o.0 == v) {
@@ -495,7 +507,8 @@ pub fn refresh(core: &Core) {
     if crate::retroarch::script(core).is_file() {
         crate::retroarch::bios_links(core);
     }
-    let on = core.cfg.lock().unwrap().vault_emus.clone();
+    // the separate emulators are Linux programs (.sh + AppImage): not on Windows yet
+    let on = if cfg!(windows) { vec![] } else { core.cfg.lock().unwrap().vault_emus.clone() };
     for id in &on {
         let _ = link_emu(core, id);
     }
@@ -524,7 +537,7 @@ pub fn write_find_rules(core: &Core) {
     if ra.is_file() {
         body.push_str(&format!("    <emulator name=\"RETROARCH\">\n        <rule type=\"staticpath\">\n            <entry>{}</entry>\n        </rule>\n    </emulator>\n    <core name=\"RETROARCH\">\n        <rule type=\"corepath\">\n            <entry>{}</entry>\n        </rule>\n    </core>\n", esc(&ra), esc(&crate::retroarch::cores_dir(core))));
     }
-    let on = core.cfg.lock().unwrap().vault_emus.clone();
+    let on = if cfg!(windows) { vec![] } else { core.cfg.lock().unwrap().vault_emus.clone() };
     for (id, es, name, _, _) in VAULT_EMUS {
         if !on.iter().any(|x| x == id) {
             continue;
@@ -567,7 +580,6 @@ fn game_file(path: &str) -> String {
 
 #[tauri::command]
 pub fn play(app: tauri::AppHandle, core: tauri::State<Core>, path: String, sys: String, with: Option<String>) -> Result<String, String> {
-    crate::linux_only("Starting a game")?;
     if !crate::retroarch::ra_on(&core) {
         return Err("Games start in ES-DE or RetroArch now. Playing from the vault can be turned back on in Settings.".into());
     }
@@ -579,7 +591,7 @@ pub fn play(app: tauri::AppHandle, core: tauri::State<Core>, path: String, sys: 
         if !sh.is_file() {
             return Err("RetroArch isn't in the vault yet: Roms › Tools › RetroArch › Get RetroArch.".into());
         }
-        let so = crate::retroarch::cores_dir(&core).join(format!("{c}_libretro.so"));
+        let so = crate::retroarch::cores_dir(&core).join(crate::winplay::core_file(c));
         if !so.is_file() {
             return Err(format!("The {c} core isn't there yet: Roms › Tools › RetroArch › Add cores."));
         }
@@ -589,6 +601,9 @@ pub fn play(app: tauri::AppHandle, core: tauri::State<Core>, path: String, sys: 
         (sh, vec!["--verbose".into(), format!("--log-file={}", log.display()), "-L".into(), so.to_string_lossy().into(), path.clone()])
     } else if let Some(id) = ch.strip_prefix("emu:") {
         let (_, _, name, _, _) = VAULT_EMUS.iter().find(|e| e.0 == id).ok_or("Unknown emulator")?;
+        if cfg!(windows) {
+            return Err(format!("{name} as a separate program doesn't work on Windows yet. Choose a RetroArch core for this system in Roms › Ready to play."));
+        }
         let sh = emus_dir(&core).join(name).join(format!("{}.sh", name.to_lowercase()));
         if !sh.is_file() {
             return Err(format!("{name} isn't in the vault yet: Roms › Tools › Emulators in the vault."));
@@ -606,13 +621,12 @@ pub fn play(app: tauri::AppHandle, core: tauri::State<Core>, path: String, sys: 
     } else {
         return Err("Emu Vault doesn't know an emulator for this system yet.".into());
     };
-    let child = crate::desktop_cmd(&prog.to_string_lossy())
-        .args(&args)
-        .stdin(std::process::Stdio::null())
-        .stdout(std::process::Stdio::null())
-        .stderr(std::process::Stdio::piped())
-        .spawn()
-        .map_err(|e| format!("The emulator didn't start: {e}"))?;
+    let child = if cfg!(windows) {
+        crate::winplay::spawn(&prog, &args, true)
+    } else {
+        crate::desktop_cmd(&prog.to_string_lossy()).args(&args).stdin(std::process::Stdio::null()).stdout(std::process::Stdio::null()).stderr(std::process::Stdio::piped()).spawn()
+    }
+    .map_err(|e| format!("The emulator didn't start: {e}"))?;
     // the emulator stopped right away: say why (RetroArch's log, or what the program printed)
     let log = if ch.starts_with("ra:") { Some(crate::retroarch::script(&core).with_file_name("last-game.log")) } else { None };
     let started = std::time::Instant::now();

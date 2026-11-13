@@ -46,6 +46,10 @@ fn launcher(core: &Core) -> Option<(String, Vec<String>, String)> {
     if let Some(p) = ov.esde_appimage {
         return Some((p.clone(), vec![], "downloaded by Emu Vault".into()));
     }
+    // Windows: only the portable ES-DE Emu Vault downloads (winplay.rs)
+    if cfg!(windows) {
+        return None;
+    }
     if let Some(fp) = which("flatpak") {
         let ok = crate::desktop_cmd(&fp.to_string_lossy()).args(["info", "org.es_de.frontend"]).output().map(|o| o.status.success()).unwrap_or(false);
         if ok {
@@ -104,6 +108,9 @@ fn same(a: &str, b: &Path) -> bool {
 }
 
 fn running() -> bool {
+    if cfg!(windows) {
+        return crate::winplay::running("ES-DE.exe");
+    }
     std::fs::read_dir("/proc").into_iter().flatten().flatten().any(|e| {
         std::fs::read_to_string(e.path().join("comm"))
             .map(|c| {
@@ -254,7 +261,6 @@ pub async fn esde_setup(core: tauri::State<'_, Core>) -> Result<String, String> 
 
 #[tauri::command]
 pub fn esde_start(core: tauri::State<Core>) -> Result<(), String> {
-    crate::linux_only("Starting ES-DE")?;
     let (prog, mut args, _) = launcher(&core).ok_or("ES-DE isn't on this computer yet. Press \"Download ES-DE\" first.")?;
     let (root, in_vault) = {
         let c = core.cfg.lock().unwrap();
@@ -273,6 +279,18 @@ pub fn esde_start(core: tauri::State<Core>) -> Result<(), String> {
         crate::play::refresh(&core);
         args.push("--home".into());
         args.push(root.clone());
+    }
+    if cfg!(windows) {
+        // the portable zip, unpacked once; ES-DE keeps its things in <home>\ES-DE, as esde_dir() says
+        let exe = crate::winplay::esde_exe(&prog)?;
+        if !in_vault {
+            args.push("--home".into());
+            args.push(dirs::home_dir().unwrap_or_default().to_string_lossy().into());
+        }
+        crate::play::refresh(&core);
+        crate::winplay::spawn(&exe, &args, false).map_err(|e| format!("ES-DE didn't start: {e}"))?;
+        core.log("ES-DE started");
+        return Ok(());
     }
     #[cfg(unix)]
     if prog.to_lowercase().ends_with(".appimage") {
