@@ -64,18 +64,21 @@ To play, install the games with GOG Galaxy or Heroic. Emu Vault is the safe copy
 
 ## Install
 
-Every release has three files. You need one.
+Every release has these files. You need one.
 
 | File | For |
 | --- | --- |
-| `emu-vault-<version>.sh` | **Most people.** Standalone, runs on any Linux and Steam Deck. Includes chdman and xdelta3. |
+| `emu-vault-<version>.sh` | **Most people on Linux.** Standalone, runs on any Linux and Steam Deck. Includes chdman and xdelta3. |
 | `emu-vault-lite-<version>.sh` | The same without chdman and xdelta3, if you install those yourself. |
 | `emu-vault_<version>_amd64.deb` | Debian, Ubuntu, Linux Mint and other .deb systems. |
+| `emu-vault-<version>-windows-portable.exe` | **Windows 10 and 11, early version.** No install: just start it. Starting games and emulators, sorting BIOS files from a folder and updating itself still need Linux; the app tells you when you reach one of those. |
 
 ```sh
-chmod +x emu-vault-0.15.0.sh
-./emu-vault-0.15.0.sh
+chmod +x emu-vault-0.16.4.sh
+./emu-vault-0.16.4.sh
 ```
+
+**On a USB stick.** Put the Windows `.exe` and the Linux `.sh` side by side on a stick. The `.exe` makes a folder `emu-vault-data` next to itself, and the `.sh` uses that folder too when it's there, so both share your settings and your GOG login. The folders (your vault, your GOG folder) are remembered per computer, because the stick and your drives get different names on every PC.
 
 On first start you pick your vault folder and the devices you play on (Linux PC, Windows PC, Android). Emu Vault looks at your games and suggests one good emulator per system.
 

@@ -78,6 +78,9 @@ fn systemctl(args: &[&str]) -> bool {
 pub fn apply(cfg: &store::BgCfg) -> Result<(), String> {
     if cfg.on {
         crate::linux_only("Checking while Emu Vault is closed")?;
+        if crate::stick::is_portable() {
+            return Err("Checking while Emu Vault is closed doesn't work when it runs from a stick: the stick may not be there.".into());
+        }
     }
     let d = unit_dir();
     let svc = d.join(format!("{UNIT}.service"));

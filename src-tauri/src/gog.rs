@@ -153,7 +153,9 @@ fn cfg_path() -> PathBuf {
 fn cfg() -> MutexGuard<'static, GogCfg> {
     static C: OnceLock<Mutex<GogCfg>> = OnceLock::new();
     C.get_or_init(|| {
-        let mut c: GogCfg = std::fs::read_to_string(cfg_path()).ok().and_then(|t| serde_json::from_str(&t).ok()).unwrap_or_default();
+        let c: GogCfg = std::fs::read_to_string(cfg_path()).ok().and_then(|t| serde_json::from_str(&t).ok()).unwrap_or_default();
+        // 0.16.4: on a stick, the GOG folder is this computer's own
+        let mut c = crate::stick::here_in("gog.json", crate::stick::GOG_HERE, c);
         if !c.old_v2 {
             // you asked for one version per game: the old one goes once the new one is in and checked
             c.old = "delete".into();
@@ -166,6 +168,7 @@ fn cfg() -> MutexGuard<'static, GogCfg> {
     .unwrap_or_else(|e| e.into_inner())
 }
 fn save(c: &GogCfg) -> Result<(), String> {
+    crate::stick::here_out("gog.json", crate::stick::GOG_HERE, c);
     store::write_json(&cfg_path(), c)?;
     #[cfg(unix)]
     {

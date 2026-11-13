@@ -174,7 +174,14 @@ pub struct State {
 }
 
 pub fn app_dir() -> PathBuf {
-    std::env::var("EMUVAULT_HOME").map(PathBuf::from).unwrap_or_else(|_| dirs::config_dir().unwrap_or_else(|| PathBuf::from("/tmp")).join("emu-vault"))
+    if let Ok(h) = std::env::var("EMUVAULT_HOME") {
+        return PathBuf::from(h);
+    }
+    crate::stick::portable_dir().unwrap_or_else(home_dir)
+}
+/// Where the settings live when Emu Vault isn't run from a stick (~/.config/emu-vault, %APPDATA%\emu-vault).
+pub(crate) fn home_dir() -> PathBuf {
+    dirs::config_dir().unwrap_or_else(|| PathBuf::from("/tmp")).join("emu-vault")
 }
 
 fn read_json<T: for<'a> Deserialize<'a> + Default>(p: &Path) -> T {
@@ -190,9 +197,16 @@ pub(crate) fn write_json<T: Serialize>(p: &Path, v: &T) -> Result<(), String> {
 }
 
 pub fn load_config() -> Config {
-    read_json(&app_dir().join("config.json"))
+    use crate::stick::{here_in, here_out, is_portable, places_file, CONFIG_HERE};
+    let had = places_file().exists();
+    let c: Config = here_in("config.json", CONFIG_HERE, read_json(&app_dir().join("config.json")));
+    if is_portable() && !had {
+        here_out("config.json", CONFIG_HERE, &c);
+    }
+    c
 }
 pub fn save_config(c: &Config) -> Result<(), String> {
+    crate::stick::here_out("config.json", crate::stick::CONFIG_HERE, c);
     write_json(&app_dir().join("config.json"), c)
 }
 pub fn load_state() -> State {
